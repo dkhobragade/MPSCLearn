@@ -4,9 +4,11 @@ import { useState } from "react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { Checkbox } from "../ui/checkbox";
-import { Divider, Form, Input } from "antd";
+import { Input } from "../ui/input";
+import { Divider, Form } from "antd";
 import type { CheckboxChangeEvent } from "antd/es/checkbox";
 import GoogleOutlined from "@ant-design/icons/lib/icons/GoogleOutlined";
+import { PasswordInput } from "../ui/inputPassword";
 
 export default function page ()
 {
@@ -41,12 +43,7 @@ export default function page ()
                         ] }
                         className="mb-4"
                     >
-                        <Input
-                            placeholder="Email or Mobile Number"
-                            size="large"
-                            autoComplete='new-password'
-                            className="rounded-md py-2 px-4 border-gray-300 text-sm"
-                        />
+                        <Input onChange={ () => { } } placeholder="Email or Mobile Number" size="large" />
                     </Form.Item>
 
                     <Form.Item
@@ -56,13 +53,7 @@ export default function page ()
                         ] }
                         className="mb-2"
                     >
-                        <Input.Password
-                            placeholder="Password"
-                            size="large"
-                            autoComplete='new-password'
-                            className="rounded-md py-2 px-4 border-gray-300 text-sm"
-
-                        />
+                        <PasswordInput onChange={ () => { } } placeholder="Password" size="large" />
                     </Form.Item>
 
                     <div className="flex justify-between items-center mb-6">
@@ -85,9 +76,7 @@ export default function page ()
                         <span className="text-gray-500 text-sm px-2">OR</span>
                     </Divider>
 
-                    <div className="space-y-3">
-                        <Button text="Continue with Google" icon={ <GoogleOutlined className="!text-red-500 mr-3 w-5" color="red" /> } onClick={ () => { } } />
-                    </div>
+                    <Button text="Continue with Google" icon={ <GoogleOutlined className="!text-red-500 mr-3 w-5" color="red" /> } onClick={ () => { } } />
 
                     <div className="text-center mt-6">
                         <p className="text-gray-600 text-sm">
