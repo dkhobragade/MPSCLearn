@@ -1,13 +1,24 @@
 "use client"
 
+import { useState } from "react";
 import Link from "next/link";
-import GoogleOutlined from "@ant-design/icons/lib/icons/GoogleOutlined";
-import { Divider, Form, Input } from "antd";
-import Checkbox from "antd/es/checkbox/Checkbox";
 import { Button } from "../ui/button";
+import { Checkbox } from "../ui/checkbox";
+import { Divider, Form, Input } from "antd";
+import type { CheckboxChangeEvent } from "antd/es/checkbox";
+import GoogleOutlined from "@ant-design/icons/lib/icons/GoogleOutlined";
 
 export default function page ()
 {
+    const [ isChecked, setIsChecked ] = useState( false )
+
+
+    const onCheckBoxChange = ( e: CheckboxChangeEvent ) =>
+    {
+        setIsChecked( e.target.checked );
+    }
+
+
     return (
         <div className="min-h-screen bg-gray-50 flex flex-col justify-center items-center py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-md w-full bg-white rounded-lg shadow-xl p-8">
@@ -56,9 +67,7 @@ export default function page ()
 
                     <div className="flex justify-between items-center mb-6">
                         <Form.Item name="remember" valuePropName="checked">
-                            <Checkbox className="text-sm text-gray-600">
-                                Remember me
-                            </Checkbox>
+                            <Checkbox text="Remember me" isChecked={ isChecked } onChange={ onCheckBoxChange } />
                         </Form.Item>
                         <Link
                             href="#"
