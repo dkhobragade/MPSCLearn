@@ -9,9 +9,7 @@ interface ButtonProps
     size?: "large" | "middle" | "small"
     onClick: ( event: React.MouseEvent<HTMLElement, MouseEvent> ) => void
     icon?: ReactNode
-    iconPosition?: 'start' | 'end'
-
-
+    iconPosition?: "start" | "end"
 }
 
 export function Button ( props: ButtonProps )
