@@ -1,3 +1,4 @@
+import { ReactNode } from "react"
 import { Input as PrimaryInput } from "antd"
 
 interface InputProps
@@ -6,13 +7,14 @@ interface InputProps
     value?: string
     onChange: () => void
     size?: "large" | "middle" | "small"
+    prefix?: ReactNode
 }
 
 
 export function PasswordInput ( props: InputProps )
 {
     return (
-        <PrimaryInput.Password autoComplete="new-password" size={ props.size } value={ props.value } placeholder={ props.placeholder } onChange={ props.onChange } />
+        <PrimaryInput.Password prefix={ props.prefix } autoComplete="new-password" size={ props.size } value={ props.value } placeholder={ props.placeholder } onChange={ props.onChange } />
 
     )
 }
