@@ -1,12 +1,12 @@
 "use client"
 
 import { useState } from 'react';
-import { GoogleOutlined, LockOutlined, MailOutlined, PhoneOutlined, UserOutlined } from '@ant-design/icons';
+import Link from 'next/link';
 import { Divider, Form } from 'antd';
 import { Button } from '../ui/button';
-import Link from 'next/link';
 import { Input } from '../ui/input';
 import { PasswordInput } from '../ui/inputPassword';
+import { GoogleOutlined, LockOutlined, MailOutlined, PhoneOutlined, UserOutlined } from '@ant-design/icons';
 
 
 export default function page ()
