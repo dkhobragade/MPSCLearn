@@ -14,7 +14,6 @@ export default function page ()
 {
     const [ isChecked, setIsChecked ] = useState( false )
 
-
     const onCheckBoxChange = ( e: CheckboxChangeEvent ) =>
     {
         setIsChecked( e.target.checked );

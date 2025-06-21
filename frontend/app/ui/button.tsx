@@ -15,7 +15,7 @@ interface ButtonProps
 export function Button ( props: ButtonProps )
 {
     return (
-        <PrimaryButton block icon={ props.icon } iconPosition={ props.iconPosition } onClick={ props.onClick } type={ props.type || "default" } color={ props.color || 'default' }  >
+        <PrimaryButton size={ props.size } block icon={ props.icon } iconPosition={ props.iconPosition } onClick={ props.onClick } type={ props.type || "default" } color={ props.color || 'default' }  >
             { props.text }
         </PrimaryButton>
     );

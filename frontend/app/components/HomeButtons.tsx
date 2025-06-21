@@ -3,7 +3,7 @@
 import { Suspense } from "react"
 import { Button } from "../ui/button"
 import { ElemsRow } from "../ui/row"
-import ButtonSkeleton from "../ui/skeletons"
+import { ButtonSkeleton } from "../ui/skeletons"
 import { CaretRightOutlined, RightCircleFilled } from "@ant-design/icons"
 
 export function HomeButtons ()

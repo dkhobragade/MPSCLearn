@@ -22,7 +22,9 @@ export default function Home ()
               MPSC preparation with our expert guidance and comprehensive
               study resources.
             </p>
-            <HomeButtons />
+            <div className="p-1">
+              <HomeButtons />
+            </div>
             <div className="mt-12 flex items-center gap-8">
               <div className="flex items-center">
                 <div className="flex -space-x-4">
