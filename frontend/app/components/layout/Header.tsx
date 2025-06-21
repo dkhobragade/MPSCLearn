@@ -1,15 +1,22 @@
-
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/app/ui/button";
 import { ElemsRow } from "@/app/ui/row";
 import { MenuOutlined } from "@ant-design/icons";
 import { Menu, MenuProps } from "antd";
 import { HeaderItems } from "@/app/lib/constants";
-import { useState } from "react";
+import { MenuSkeleton } from "@/app/ui/skeletons";
 
 export default function Header ()
 {
-    const [ currentMenu, setCurrentMenu ] = useState( 'mail' );
+    const [ currentMenu, setCurrentMenu ] = useState( '' );
+    const [ isMounted, setIsMounted ] = useState( false )
+
+    useEffect( () =>
+    {
+        setIsMounted( true )
+    }, [] )
+
 
     const router = useRouter()
 
@@ -26,17 +33,23 @@ export default function Header ()
                     <div className="text-2xl font-bold text-blue-700 mr-8 flex items-center">
                         <i className="fas fa-graduation-cap text-3xl mr-2"></i> DKMPSC
                     </div>
-                    <Menu items={ HeaderItems } mode="horizontal" onClick={ onMenuClick } />
+                    { isMounted ?
+                        <Menu items={ HeaderItems } mode="horizontal" onClick={ onMenuClick } />
+                        : <MenuSkeleton />
+                    }
                 </div>
                 <ElemsRow>
-                    <Button type="primary" size="middle" text="Sign In" onClick={ () => router.push( '/login' ) } />
-                    <Button text="Register" size="middle" onClick={ () => router.push( '/signup' ) } />
+                    <Button skeleton={ !isMounted } type="primary" size="middle" text="Sign In" onClick={ () => router.push( '/login' ) } />
+                    <Button skeleton={ !isMounted } text="Register" size="middle" onClick={ () => router.push( '/signup' ) } />
                 </ElemsRow>
                 <MenuOutlined className="lg:!hidden text-gray-500 bg-amber-400 hover:text-red-700 cursor-pointer" />
             </div>
             {/* Mobile Menu */ }
             <div className="lg:hidden p-5">
-                <Menu items={ HeaderItems } selectedKeys={ [ currentMenu ] } mode="inline" onClick={ onMenuClick } />
+                { isMounted ?
+                    <Menu items={ HeaderItems } selectedKeys={ [ currentMenu ] } mode="inline" onClick={ onMenuClick } />
+                    : <MenuSkeleton />
+                }
                 <ElemsRow>
                     <Button type="primary" size="middle" text="Sign In" onClick={ () => router.push( '/login' ) } />
                     <Button text="Register" size="middle" onClick={ () => router.push( '/signup' ) } />
