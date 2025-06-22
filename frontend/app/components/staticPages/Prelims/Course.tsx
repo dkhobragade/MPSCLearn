@@ -263,13 +263,6 @@ export default function Course ()
                             </div>
                         ) ) }
                     </div>
-                    {/* <Button
-                        type="default"
-                        block
-                        className="mt-4 !rounded-button whitespace-nowrap cursor-pointer"
-                    >
-                        View More Success Stories
-                    </Button> */}
                 </div>
 
                 <div className="bg-gradient-to-r from-blue-600 to-blue-800 shadow rounded-lg p-6">

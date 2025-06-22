@@ -83,7 +83,7 @@ export const HeaderItems = [
             },
             {
                 label: (
-                    <Link href="mains">
+                    <Link href="/mains">
                         Mains
                     </Link>
                 ),
