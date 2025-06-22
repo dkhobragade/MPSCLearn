@@ -153,3 +153,53 @@ export const faqs:CollapseProps['items'] = [
         "We have a satisfaction guarantee policy. If you're not satisfied with your counselling session, you can provide detailed feedback, and we'll offer you another session with a different mentor at a 50% discount.",
     },
   ];
+
+
+export const courseVideos = [
+        {
+            id: 1,
+            title: "Introduction to Indian Polity",
+            description:
+                "Learn the fundamental concepts of Indian Constitution and Democracy",
+            duration: "45:20",
+            instructor: "Dr. Rajesh Kumar",
+            thumbnail:
+                "https://readdy.ai/api/search-image?query=Professional%20educational%20setup%20with%20modern%20digital%20screen%20showing%20Indian%20constitution%20and%20democracy%20concepts%2C%20clean%20minimal%20background%20with%20warm%20lighting&width=400&height=225&seq=v1&orientation=landscape",
+            isLocked: false,
+            progress: 100,
+        },
+        {
+            id: 2,
+            title: "Understanding Maharashtra Geography",
+            description:
+                "Comprehensive overview of Maharashtra's geographical features and divisions",
+            duration: "52:15",
+            instructor: "Prof. Priya Desai",
+            thumbnail:
+                "https://readdy.ai/api/search-image?query=Professional%20classroom%20setup%20with%20digital%20display%20showing%20Maharashtra%20map%20and%20geographical%20features%2C%20modern%20educational%20environment%20with%20clean%20background&width=400&height=225&seq=v2&orientation=landscape",
+            isLocked: true,
+            progress: 0,
+        },
+        {
+            id: 3,
+            title: "Economic Development & Planning",
+            description: "Analysis of economic policies and development strategies",
+            duration: "48:30",
+            instructor: "Dr. Amit Sharma",
+            thumbnail:
+                "https://readdy.ai/api/search-image?query=Modern%20lecture%20hall%20with%20professional%20presentation%20of%20economic%20charts%20and%20graphs%2C%20clean%20educational%20environment%20with%20subtle%20lighting&width=400&height=225&seq=v3&orientation=landscape",
+            isLocked: true,
+            progress: 0,
+        },
+        {
+            id: 4,
+            title: "Environmental Studies",
+            description: "Key concepts in environmental science and ecology",
+            duration: "55:45",
+            instructor: "Dr. Neha Patel",
+            thumbnail:
+                "https://readdy.ai/api/search-image?query=Professional%20educational%20setup%20showing%20environmental%20science%20concepts%20on%20digital%20display%2C%20modern%20classroom%20with%20clean%20minimal%20background&width=400&height=225&seq=v4&orientation=landscape",
+            isLocked: true,
+            progress: 0,
+        },
+    ];

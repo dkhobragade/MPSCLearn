@@ -108,7 +108,11 @@ export const HeaderItems = [
         ],
     },
     {
-        label: 'Free Initiative',
+        label: (
+            <Link href="/freeinitiative">
+                Free Initiative
+            </Link>
+        ),
         key: 'freeinitiative',
         icon: ""
     },
