@@ -1,8 +1,8 @@
 "use client"
 
 import { Typography } from "antd";
-import { Button } from "../ui/button";
-import { journeySteps } from "../lib/constants";
+import { Button } from "../../../ui/button";
+import { journeySteps } from "../../../lib/constants";
 import { RightCircleFilled, StarFilled } from "@ant-design/icons";
 
 export default function Timeline ()

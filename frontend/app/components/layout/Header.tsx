@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/app/ui/button";
 import { ElemsRow } from "@/app/ui/row";
-import { MenuOutlined } from "@ant-design/icons";
+import { CaretDownOutlined, MenuOutlined } from "@ant-design/icons";
 import { Menu, MenuProps } from "antd";
-import { HeaderItems } from "@/app/lib/constants";
 import { MenuSkeleton } from "@/app/ui/skeletons";
+import Link from "next/link";
 
 export default function Header ()
 {
@@ -58,3 +58,67 @@ export default function Header ()
         </header>
     )
 }
+
+
+
+export const HeaderItems = [
+
+    {
+        label: (
+            <>
+                Courses <CaretDownOutlined />
+            </>
+        ),
+        key: "courses",
+        icon: "",
+        children: [
+            {
+                label: 'Prelims',
+                key: 'pre',
+                icon: '',
+            },
+            {
+                label: 'Mains',
+                key: 'mains',
+                icon: '',
+            },
+
+        ],
+    },
+    {
+        label: (
+            <>
+                PYQ <CaretDownOutlined />
+            </>
+        ),
+        key: "pyq",
+        icon: "",
+        children: [
+            {
+                label: 'Download',
+                key: 'download',
+                icon: '',
+            },
+            {
+                label: 'Test',
+                key: 'test',
+                icon: '',
+            },
+
+        ],
+    },
+    {
+        label: 'Free Initiative',
+        key: 'freeinitiative',
+        icon: ""
+    },
+    {
+        label: (
+            <Link href="/counselling" >
+                Counselling
+            </Link>
+        ),
+        key: 'counselling',
+        icon: ""
+    },
+]

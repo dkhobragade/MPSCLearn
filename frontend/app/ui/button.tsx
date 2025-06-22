@@ -14,6 +14,7 @@ interface ButtonProps
     fullWidth?: boolean
     variant?: "link" | "text" | "dashed" | "solid" | "outlined" | "filled"
     skeleton?: boolean
+    disabled?: boolean
 }
 
 export function Button ( props: ButtonProps )
@@ -24,7 +25,7 @@ export function Button ( props: ButtonProps )
     }
 
     return (
-        <PrimaryButton variant={ props.variant } size={ props.size } block={ props.fullWidth || true } icon={ props.icon } iconPosition={ props.iconPosition } onClick={ props.onClick } type={ props.type || "default" } color={ props.color || 'default' }  >
+        <PrimaryButton disabled={ props.disabled } variant={ props.variant } size={ props.size } block={ props.fullWidth } icon={ props.icon } iconPosition={ props.iconPosition } onClick={ props.onClick } type={ props.type || "default" } color={ props.color || 'default' }  >
             { props.text }
         </PrimaryButton>
     );

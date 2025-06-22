@@ -2,8 +2,8 @@
 import Image from "next/image";
 import { HomeButtons } from "./components/HomeButtons";
 import { CheckOutlined, StarFilled, UserOutlined } from "@ant-design/icons";
-import Timeline from "./home/Timeline";
-import Features from "./home/Features";
+import Timeline from "./components/staticPages/Home/Timeline";
+import Features from "./components/staticPages/Home/Features";
 
 export default function Home ()
 {
