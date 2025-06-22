@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import "antd/dist/reset.css";
-import { Inter } from "next/font/google";
+import { Inter, Roboto } from "next/font/google";
 import LayoutWrapper from "./components/layout/LayoutWrapper";
 
 const intern = Inter( {
+  subsets: [ 'latin' ],
+  weight: [ "400", "500" ]
+} )
+
+const roboto = Roboto( {
   subsets: [ 'latin' ],
   weight: [ "400", "500" ]
 } )
@@ -23,7 +28,7 @@ export default function RootLayout ( {
   return (
     <html lang="en">
       <body
-        className={ intern.className }
+        className={ `${ intern.className } ${ roboto.className }` }
       >
         <LayoutWrapper>
           { children }
