@@ -1,6 +1,7 @@
-import { courseFeatures, upcomingBatches } from "@/app/lib/constants";
 import { Button } from "@/app/ui/button";
-import { CheckCircleOutlined } from "@ant-design/icons";
+import { courseFeatures, upcomingBatches } from "@/app/lib/constants";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 
 export default function Overview ()
 {
@@ -83,7 +84,7 @@ export default function Overview ()
                         { courseFeatures.slice( 0, 4 ).map( ( feature, index ) => (
                             <li key={ index } className="flex">
                                 <div className="flex-shrink-0 text-blue-500 mt-1">
-                                    <CheckCircleOutlined />
+                                    <FontAwesomeIcon icon={ faCircleCheck } className="w-5" />
                                 </div>
                                 <div className="ml-3">
                                     <p className="text-sm font-medium text-gray-900">

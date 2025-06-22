@@ -1,3 +1,4 @@
+import { faBookOpen, faChartLine, faChess, faClipboardCheck, faTasks, faUserTie } from "@fortawesome/free-solid-svg-icons";
 import { CollapseProps } from "antd";
 
 export const journeySteps = [
@@ -6,7 +7,7 @@ export const journeySteps = [
       title: "Initial Assessment",
       description:
         "Begin with a comprehensive evaluation of your current preparation level, strengths, and areas for improvement.",
-      icon: "faClipboardCheck",
+      icon: faClipboardCheck,
       color: "bg-blue-500",
       point: "high",
     },
@@ -15,7 +16,7 @@ export const journeySteps = [
       title: "Strategy Development",
       description:
         "Create a personalized study plan tailored to your learning style, available time, and exam goals.",
-      icon: "faChess",
+      icon: faChess,
       color: "bg-purple-500",
       point: "high",
     },
@@ -24,7 +25,7 @@ export const journeySteps = [
       title: "Resource Optimization",
       description:
         "Get guidance on the most effective study materials and resources to maximize your learning efficiency.",
-      icon: "faBookOpen",
+      icon: faBookOpen,
       color: "bg-green-500",
       point: "medium",
     },
@@ -33,7 +34,7 @@ export const journeySteps = [
       title: "Regular Progress Tracking",
       description:
         "Monitor your improvement with periodic assessments and adjust your strategy as needed.",
-      icon: "faChartLine",
+      icon: faChartLine,
       color: "bg-amber-500",
       point: "low",
     },
@@ -42,7 +43,7 @@ export const journeySteps = [
       title: "Mock Tests & Analysis",
       description:
         "Practice with simulated exam conditions and receive detailed performance analysis.",
-      icon: "faTasks",
+      icon: faTasks,
       color: "bg-red-500",
       point: "high",
     },
@@ -51,7 +52,7 @@ export const journeySteps = [
       title: "Interview Preparation",
       description:
         "Comprehensive guidance for the personality test and interview stages with mock sessions.",
-      icon: "faUserTie",
+      icon: faUserTie,
       color: "bg-indigo-500",
       point: "high",
     },

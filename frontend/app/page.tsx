@@ -1,9 +1,10 @@
 
 import Image from "next/image";
 import { HomeButtons } from "./components/HomeButtons";
-import { CheckOutlined, StarFilled, UserOutlined } from "@ant-design/icons";
 import Timeline from "./components/staticPages/Home/Timeline";
 import Features from "./components/staticPages/Home/Features";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck, faGraduationCap, faStar } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home ()
 {
@@ -54,7 +55,7 @@ export default function Home ()
                 </div>
                 <div className="flex items-center">
                   <div className="text-yellow-400 text-2xl mr-2">
-                    <StarFilled />
+                    <FontAwesomeIcon icon={ faStar } className="w-5" />
                   </div>
                   <span>
                     <div className="font-bold text-gray-900">4.9/5</div>
@@ -74,7 +75,7 @@ export default function Home ()
                 <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg">
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                      <UserOutlined />
+                      <FontAwesomeIcon icon={ faGraduationCap } className="text-blue-600 w-5" />
                     </div>
                     <div>
                       <div className="font-bold text-gray-900">500+</div>
@@ -87,7 +88,7 @@ export default function Home ()
                 <div className="absolute -top-6 -right-6 bg-white p-4 rounded-xl shadow-lg">
                   <div className="flex items-center gap-3">
                     <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                      <CheckOutlined size={ 50 } className="text-green-600 w-5" />
+                      <FontAwesomeIcon icon={ faCheck } className="text-green-600 w-5" />
                     </div>
                     <div>
                       <div className="font-bold text-gray-900">100%</div>

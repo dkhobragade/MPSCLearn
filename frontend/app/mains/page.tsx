@@ -1,11 +1,12 @@
 "use client"
 
+import { Button } from "../ui/button";
 import { Progress, Tabs, Tag } from "antd";
 import CTA from "../components/staticPages/Prelims/CTA";
 import FAQs from "../components/staticPages/Prelims/FAQs";
 import { courseFeatures, syllabusData, testimonials, upcomingBatches } from "../lib/constants";
-import { BookOutlined, CheckCircleOutlined } from "@ant-design/icons";
-import { Button } from "../ui/button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBook, faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 
 export default function Mains ()
 {
@@ -101,7 +102,7 @@ export default function Mains ()
                                         { courseFeatures.slice( 0, 4 ).map( ( feature, index ) => (
                                             <li key={ index } className="flex">
                                                 <div className="flex-shrink-0 text-blue-500 mt-1">
-                                                    <CheckCircleOutlined />
+                                                    <FontAwesomeIcon icon={ faCircleCheck } className="w-5" />
                                                 </div>
                                                 <div className="ml-3">
                                                     <p className="text-sm font-medium text-gray-900">
@@ -219,7 +220,7 @@ export default function Mains ()
                                     <ul className="space-y-3">
                                         <li className="flex">
                                             <div className="flex-shrink-0 text-blue-500 mt-1">
-                                                <BookOutlined />
+                                                <FontAwesomeIcon icon={ faBook } />
                                             </div>
                                             <div className="ml-3">
                                                 <p className="text-sm font-medium text-gray-900">
@@ -230,7 +231,7 @@ export default function Mains ()
                                         </li>
                                         <li className="flex">
                                             <div className="flex-shrink-0 text-blue-500 mt-1">
-                                                <BookOutlined />
+                                                <FontAwesomeIcon icon={ faBook } />
                                             </div>
                                             <div className="ml-3">
                                                 <p className="text-sm font-medium text-gray-900">
@@ -241,7 +242,7 @@ export default function Mains ()
                                         </li>
                                         <li className="flex">
                                             <div className="flex-shrink-0 text-blue-500 mt-1">
-                                                <BookOutlined />
+                                                <FontAwesomeIcon icon={ faBook } />
                                             </div>
                                             <div className="ml-3">
                                                 <p className="text-sm font-medium text-gray-900">
@@ -252,7 +253,7 @@ export default function Mains ()
                                         </li>
                                         <li className="flex">
                                             <div className="flex-shrink-0 text-blue-500 mt-1">
-                                                <BookOutlined />
+                                                <FontAwesomeIcon icon={ faBook } />
                                             </div>
                                             <div className="ml-3">
                                                 <p className="text-sm font-medium text-gray-900">
@@ -263,7 +264,7 @@ export default function Mains ()
                                         </li>
                                         <li className="flex">
                                             <div className="flex-shrink-0 text-blue-500 mt-1">
-                                                <BookOutlined />
+                                                <FontAwesomeIcon icon={ faBook } />
                                             </div>
                                             <div className="ml-3">
                                                 <p className="text-sm font-medium text-gray-900">
@@ -283,7 +284,7 @@ export default function Mains ()
                                     <ul className="space-y-3">
                                         <li className="flex">
                                             <div className="flex-shrink-0 text-blue-500 mt-1">
-                                                <BookOutlined />
+                                                <FontAwesomeIcon icon={ faBook } />
                                             </div>
                                             <div className="ml-3">
                                                 <p className="text-sm font-medium text-gray-900">
@@ -294,7 +295,7 @@ export default function Mains ()
                                         </li>
                                         <li className="flex">
                                             <div className="flex-shrink-0 text-blue-500 mt-1">
-                                                <BookOutlined />
+                                                <FontAwesomeIcon icon={ faBook } />
                                             </div>
                                             <div className="ml-3">
                                                 <p className="text-sm font-medium text-gray-900">
@@ -305,7 +306,7 @@ export default function Mains ()
                                         </li>
                                         <li className="flex">
                                             <div className="flex-shrink-0 text-blue-500 mt-1">
-                                                <BookOutlined />
+                                                <FontAwesomeIcon icon={ faBook } />
                                             </div>
                                             <div className="ml-3">
                                                 <p className="text-sm font-medium text-gray-900">
@@ -318,7 +319,7 @@ export default function Mains ()
                                         </li>
                                         <li className="flex">
                                             <div className="flex-shrink-0 text-blue-500 mt-1">
-                                                <BookOutlined />
+                                                <FontAwesomeIcon icon={ faBook } />
                                             </div>
                                             <div className="ml-3">
                                                 <p className="text-sm font-medium text-gray-900">
@@ -331,7 +332,7 @@ export default function Mains ()
                                         </li>
                                         <li className="flex">
                                             <div className="flex-shrink-0 text-blue-500 mt-1">
-                                                <BookOutlined />
+                                                <FontAwesomeIcon icon={ faBook } />
                                             </div>
                                             <div className="ml-3">
                                                 <p className="text-sm font-medium text-gray-900">

@@ -7,8 +7,9 @@ import { Checkbox } from "../ui/checkbox";
 import { Input } from "../ui/input";
 import { Divider, Form } from "antd";
 import type { CheckboxChangeEvent } from "antd/es/checkbox";
-import GoogleOutlined from "@ant-design/icons/lib/icons/GoogleOutlined";
 import { PasswordInput } from "../ui/inputPassword";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 
 export default function page ()
 {
@@ -75,7 +76,7 @@ export default function page ()
                         <span className="text-gray-500 text-sm px-2">OR</span>
                     </Divider>
 
-                    <Button text="Continue with Google" fullWidth icon={ <GoogleOutlined className="!text-red-500 mr-3 w-5" color="red" /> } onClick={ () => { } } />
+                    <Button text="Continue with Google" fullWidth icon={ <FontAwesomeIcon icon={ faGoogle } className="!text-red-500 mr-3 w-5" /> } onClick={ () => { } } />
 
                     <div className="text-center mt-6">
                         <p className="text-gray-600 text-sm">

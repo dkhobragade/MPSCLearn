@@ -3,9 +3,10 @@
 import { Calendar, Form, Input, Radio, Select } from 'antd'
 import React, { useState } from 'react'
 import { Dayjs } from 'dayjs'
-import { ClockCircleOutlined } from '@ant-design/icons'
 import { timeSlots } from '@/app/lib/constants'
 import { Button } from '@/app/ui/button'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faClock } from '@fortawesome/free-solid-svg-icons'
 
 export default function Booking ()
 {
@@ -53,9 +54,7 @@ export default function Booking ()
                                         className={ `p-3 rounded-lg border ${ selectedTimeSlot === slot ? "border-blue-500 bg-blue-50" : "border-gray-200" } hover:border-blue-500 cursor-pointer transition-colors` }
                                     >
                                         <div className="flex items-center">
-                                            <ClockCircleOutlined
-                                                className={ `mr-2 ${ selectedTimeSlot === slot ? "text-blue-500" : "text-gray-400" }` }
-                                            />
+                                            <FontAwesomeIcon icon={ faClock } className={ `mr-2 ${ selectedTimeSlot === slot ? "text-blue-500" : "text-gray-400" }` } />
                                             <span
                                                 className={
                                                     selectedTimeSlot === slot

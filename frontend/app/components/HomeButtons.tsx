@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react"
 import { Button } from "../ui/button"
 import { ElemsRow } from "../ui/row"
-import { CaretRightOutlined, RightCircleFilled } from "@ant-design/icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faArrowRight, faPlayCircle } from "@fortawesome/free-solid-svg-icons"
 
 export function HomeButtons ()
 {
@@ -16,8 +17,8 @@ export function HomeButtons ()
 
     return (
         <ElemsRow>
-            <Button skeleton={ !isMounted } fullWidth size="large" type="primary" icon={ <CaretRightOutlined /> } iconPosition="end" text="Start Learning" onClick={ () => { } } />
-            <Button skeleton={ !isMounted } fullWidth size="large" icon={ <RightCircleFilled /> } iconPosition="end" text="Watch Demo" onClick={ () => { } } />
+            <Button skeleton={ !isMounted } fullWidth size="large" type="primary" icon={ <FontAwesomeIcon icon={ faArrowRight } /> } iconPosition="end" text="Start Learning" onClick={ () => { } } />
+            <Button skeleton={ !isMounted } fullWidth size="large" icon={ <FontAwesomeIcon icon={ faPlayCircle } /> } iconPosition="end" text="Watch Demo" onClick={ () => { } } />
         </ElemsRow>
     )
 }

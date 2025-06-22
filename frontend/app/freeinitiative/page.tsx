@@ -4,7 +4,8 @@ import { useState } from "react";
 import { Tag } from "antd";
 import { Button } from "../ui/button";
 import { courseVideos } from "../lib/constants";
-import { CheckCircleOutlined, LockOutlined, PlayCircleOutlined } from "@ant-design/icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleCheck, faCirclePlay, faLock } from "@fortawesome/free-solid-svg-icons";
 
 export default function freeinitiative ()
 {
@@ -25,7 +26,7 @@ export default function freeinitiative ()
                                     className="w-full h-full object-cover"
                                 />
                                 <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
-                                    <PlayCircleOutlined className="text-6xl text-white opacity-80 hover:opacity-100 cursor-pointer" />
+                                    <FontAwesomeIcon icon={ faCirclePlay } className="text-6xl text-white opacity-80 hover:opacity-100 cursor-pointer" />
                                 </div>
                             </div>
                             <div className="p-6">
@@ -61,7 +62,8 @@ export default function freeinitiative ()
                                     </div>
                                     { courseVideos[ selectedVideo ].progress > 0 && (
                                         <span className="flex items-center text-green-600">
-                                            <CheckCircleOutlined className="mr-1" /> Completed
+                                            <FontAwesomeIcon icon={ faCircleCheck } className="mr-1" />
+                                            Completed
                                         </span>
                                     ) }
                                 </div>
@@ -125,7 +127,7 @@ export default function freeinitiative ()
                                                 />
                                                 { video.isLocked && (
                                                     <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center rounded">
-                                                        <LockOutlined className="text-white text-lg" />
+                                                        <FontAwesomeIcon icon={ faLock } className="text-white text-lg" />
                                                     </div>
                                                 ) }
                                             </div>

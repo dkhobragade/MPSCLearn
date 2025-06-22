@@ -6,7 +6,9 @@ import { Divider, Form } from 'antd';
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
 import { PasswordInput } from '../ui/inputPassword';
-import { GoogleOutlined, LockOutlined, MailOutlined, PhoneOutlined, UserOutlined } from '@ant-design/icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope, faLock, faPhone, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 
 
 export default function page ()
@@ -32,7 +34,7 @@ export default function page ()
                         ] }
                         className="mb-4"
                     >
-                        <Input size="large" prefix={ <UserOutlined className="text-gray-400 mr-2" /> } placeholder='Full Name' onChange={ () => { } } />
+                        <Input size="large" prefix={ <FontAwesomeIcon icon={ faUser } className="text-gray-400 mr-2" /> } placeholder='Full Name' onChange={ () => { } } />
                     </Form.Item>
 
                     <Form.Item
@@ -49,7 +51,7 @@ export default function page ()
                         ] }
                         className="mb-4"
                     >
-                        <Input prefix={ <MailOutlined className="text-gray-400 mr-2" /> }
+                        <Input prefix={ <FontAwesomeIcon icon={ faEnvelope } className="text-gray-400 mr-2" /> }
                             placeholder="Email Address"
                             size="large" onChange={ () => { } } />
                     </Form.Item>
@@ -68,7 +70,7 @@ export default function page ()
                         ] }
                         className="mb-4"
                     >
-                        <Input prefix={ <PhoneOutlined className="text-gray-400 mr-2" /> }
+                        <Input prefix={ <FontAwesomeIcon icon={ faPhone } className="text-gray-400 mr-2" /> }
                             placeholder="Mobile Number"
                             size="large" onChange={ () => { } } />
                     </Form.Item>
@@ -84,7 +86,7 @@ export default function page ()
                         ] }
                         className="mb-2"
                     >
-                        <PasswordInput prefix={ <LockOutlined className="text-gray-400 mr-2" /> }
+                        <PasswordInput prefix={ <FontAwesomeIcon icon={ faLock } className="text-gray-400 mr-2" /> }
                             placeholder="Password"
                             size="large" onChange={ () => { } } />
                     </Form.Item>
@@ -109,7 +111,7 @@ export default function page ()
                         className="mb-6"
                     >
                         <div className="relative">
-                            <PasswordInput prefix={ <LockOutlined className="text-gray-400 mr-2" /> }
+                            <PasswordInput prefix={ <FontAwesomeIcon icon={ faLock } className="text-gray-400 mr-2" /> }
                                 placeholder="Confirm Password"
                                 size="large" onChange={ () => { } } />
                             <div
@@ -128,7 +130,7 @@ export default function page ()
                         <span className="text-gray-500 text-sm px-2">OR</span>
                     </Divider>
 
-                    <Button text="Continue with Google" fullWidth icon={ <GoogleOutlined className="!text-red-500 mr-3 w-5" color="red" /> } onClick={ () => { } } />
+                    <Button text="Continue with Google" fullWidth icon={ <FontAwesomeIcon icon={ faGoogle } className="!text-red-500 mr-3 w-5" /> } onClick={ () => { } } />
 
                     <div className="text-center mt-6">
                         <p className="text-gray-600 text-sm">

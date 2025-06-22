@@ -1,6 +1,7 @@
-import { categories, difficulties, types } from "@/app/lib/constants";
-import { FilterOutlined, SearchOutlined } from "@ant-design/icons";
 import { Button, Input, Select } from "antd";
+import { categories, difficulties, types } from "@/app/lib/constants";
+import { faFilter, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Section ()
 {
@@ -22,12 +23,12 @@ export default function Section ()
                             <div className="relative">
                                 <Input
                                     placeholder="Search tests..."
-                                    prefix={ <SearchOutlined className="text-gray-400" /> }
+                                    prefix={ <FontAwesomeIcon icon={ faMagnifyingGlass } className="text-gray-400" /> }
                                     className="w-full md:w-64 rounded-lg"
                                 />
                             </div>
                             <Button
-                                icon={ <FilterOutlined /> }
+                                icon={ <FontAwesomeIcon icon={ faFilter } /> }
                                 className="bg-white border border-gray-300 rounded-lg hover:bg-gray-50 !rounded-button whitespace-nowrap cursor-pointer"
                             >
                                 Filters

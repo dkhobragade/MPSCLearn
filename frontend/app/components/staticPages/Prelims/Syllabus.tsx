@@ -1,6 +1,7 @@
 import { Progress } from "antd";
 import { syllabusData } from "@/app/lib/constants";
-import { BookOutlined } from "@ant-design/icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBook } from "@fortawesome/free-solid-svg-icons";
 
 export default function Syllabus ()
 {
@@ -66,7 +67,7 @@ export default function Syllabus ()
                         <ul className="space-y-3">
                             <li className="flex">
                                 <div className="flex-shrink-0 text-blue-500 mt-1">
-                                    <BookOutlined />
+                                    <FontAwesomeIcon icon={ faBook } />
                                 </div>
                                 <div className="ml-3">
                                     <p className="text-sm font-medium text-gray-900">
@@ -77,7 +78,7 @@ export default function Syllabus ()
                             </li>
                             <li className="flex">
                                 <div className="flex-shrink-0 text-blue-500 mt-1">
-                                    <BookOutlined />
+                                    <FontAwesomeIcon icon={ faBook } />
                                 </div>
                                 <div className="ml-3">
                                     <p className="text-sm font-medium text-gray-900">
@@ -88,7 +89,7 @@ export default function Syllabus ()
                             </li>
                             <li className="flex">
                                 <div className="flex-shrink-0 text-blue-500 mt-1">
-                                    <BookOutlined />
+                                    <FontAwesomeIcon icon={ faBook } />
                                 </div>
                                 <div className="ml-3">
                                     <p className="text-sm font-medium text-gray-900">
@@ -99,7 +100,7 @@ export default function Syllabus ()
                             </li>
                             <li className="flex">
                                 <div className="flex-shrink-0 text-blue-500 mt-1">
-                                    <BookOutlined />
+                                    <FontAwesomeIcon icon={ faBook } />
                                 </div>
                                 <div className="ml-3">
                                     <p className="text-sm font-medium text-gray-900">
@@ -110,7 +111,7 @@ export default function Syllabus ()
                             </li>
                             <li className="flex">
                                 <div className="flex-shrink-0 text-blue-500 mt-1">
-                                    <BookOutlined />
+                                    <FontAwesomeIcon icon={ faBook } />
                                 </div>
                                 <div className="ml-3">
                                     <p className="text-sm font-medium text-gray-900">
@@ -130,7 +131,7 @@ export default function Syllabus ()
                         <ul className="space-y-3">
                             <li className="flex">
                                 <div className="flex-shrink-0 text-blue-500 mt-1">
-                                    <BookOutlined />
+                                    <FontAwesomeIcon icon={ faBook } />
                                 </div>
                                 <div className="ml-3">
                                     <p className="text-sm font-medium text-gray-900">
@@ -141,7 +142,7 @@ export default function Syllabus ()
                             </li>
                             <li className="flex">
                                 <div className="flex-shrink-0 text-blue-500 mt-1">
-                                    <BookOutlined />
+                                    <FontAwesomeIcon icon={ faBook } />
                                 </div>
                                 <div className="ml-3">
                                     <p className="text-sm font-medium text-gray-900">
@@ -152,7 +153,7 @@ export default function Syllabus ()
                             </li>
                             <li className="flex">
                                 <div className="flex-shrink-0 text-blue-500 mt-1">
-                                    <BookOutlined />
+                                    <FontAwesomeIcon icon={ faBook } />
                                 </div>
                                 <div className="ml-3">
                                     <p className="text-sm font-medium text-gray-900">
@@ -165,7 +166,7 @@ export default function Syllabus ()
                             </li>
                             <li className="flex">
                                 <div className="flex-shrink-0 text-blue-500 mt-1">
-                                    <BookOutlined />
+                                    <FontAwesomeIcon icon={ faBook } />
                                 </div>
                                 <div className="ml-3">
                                     <p className="text-sm font-medium text-gray-900">
@@ -178,7 +179,7 @@ export default function Syllabus ()
                             </li>
                             <li className="flex">
                                 <div className="flex-shrink-0 text-blue-500 mt-1">
-                                    <BookOutlined />
+                                    <FontAwesomeIcon icon={ faBook } />
                                 </div>
                                 <div className="ml-3">
                                     <p className="text-sm font-medium text-gray-900">

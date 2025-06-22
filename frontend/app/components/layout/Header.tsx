@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Button } from "@/app/ui/button";
 import { ElemsRow } from "@/app/ui/row";
-import { CaretDownOutlined, MenuOutlined } from "@ant-design/icons";
 import { Menu, MenuProps } from "antd";
 import { MenuSkeleton } from "@/app/ui/skeletons";
-import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 export default function Header ()
 {
@@ -44,7 +45,7 @@ export default function Header ()
                     <Button skeleton={ !isMounted } type="primary" size="middle" text="Sign In" onClick={ () => router.push( '/login' ) } />
                     <Button skeleton={ !isMounted } text="Register" size="middle" onClick={ () => router.push( '/signup' ) } />
                 </ElemsRow>
-                <MenuOutlined className="lg:!hidden text-gray-500 bg-amber-400 hover:text-red-700 cursor-pointer" />
+                <FontAwesomeIcon icon={ faBars } className="lg:!hidden text-gray-500 bg-amber-400 hover:text-red-700 cursor-pointer" />
             </div>
             {/* Mobile Menu */ }
             <div className="lg:hidden p-5">
@@ -68,7 +69,7 @@ export const HeaderItems = [
     {
         label: (
             <>
-                Courses <CaretDownOutlined />
+                Courses <FontAwesomeIcon icon={ faChevronDown } />
             </>
         ),
         key: "courses",
@@ -98,7 +99,7 @@ export const HeaderItems = [
     {
         label: (
             <>
-                PYQ <CaretDownOutlined />
+                PYQ <FontAwesomeIcon icon={ faChevronDown } />
             </>
         ),
         key: "pyq",

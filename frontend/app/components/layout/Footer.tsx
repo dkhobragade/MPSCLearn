@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { EnvironmentFilled, FacebookFilled, InstagramFilled, MailFilled, PhoneFilled, YoutubeFilled } from "@ant-design/icons";
+import { faEnvelope, faMapMarkerAlt, faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFacebook, faInstagram, faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 export default function Footer ()
 {
@@ -18,19 +20,19 @@ export default function Footer ()
                                 href="#"
                                 className="text-gray-400 hover:text-white transition-colors cursor-pointer"
                             >
-                                <FacebookFilled />
+                                <FontAwesomeIcon icon={ faFacebook } />
                             </Link>
                             <Link
                                 href="#"
                                 className="text-gray-400 hover:text-white transition-colors cursor-pointer"
                             >
-                                <InstagramFilled />
+                                <FontAwesomeIcon icon={ faInstagram } />
                             </Link>
                             <Link
                                 href="#"
                                 className="text-gray-400 hover:text-white transition-colors cursor-pointer"
                             >
-                                <YoutubeFilled />
+                                <FontAwesomeIcon icon={ faYoutube } />
                             </Link>
                         </div>
                     </div>
@@ -139,17 +141,17 @@ export default function Footer ()
                         <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
                         <ul className="space-y-3">
                             <li className="flex items-start">
-                                <EnvironmentFilled />
+                                <FontAwesomeIcon icon={ faMapMarkerAlt } className='mt-1 mr-3 text-gray-400 w-5' />
                                 <span className="text-gray-400 pl-2">
                                     123 Education Street, Mumbai, Maharashtra, India - 400001
                                 </span>
                             </li>
                             <li className="flex items-center">
-                                <PhoneFilled />
+                                <FontAwesomeIcon icon={ faPhoneAlt } className='mr-3 text-gray-400 w-5' />
                                 <span className="text-gray-400 pl-2">+91 98765 43210</span>
                             </li>
                             <li className="flex items-center">
-                                <MailFilled />
+                                <FontAwesomeIcon icon={ faEnvelope } className='mr-3 text-gray-400 w-5' />
                                 <span className="text-gray-400 pl-2">support@mpscmentor.com</span>
                             </li>
                         </ul>

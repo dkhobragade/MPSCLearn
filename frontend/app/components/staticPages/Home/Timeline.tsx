@@ -3,7 +3,8 @@
 import { Typography } from "antd";
 import { Button } from "../../../ui/button";
 import { journeySteps } from "../../../lib/constants";
-import { RightCircleFilled, StarFilled } from "@ant-design/icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight, faStar } from "@fortawesome/free-solid-svg-icons";
 
 export default function Timeline ()
 {
@@ -33,12 +34,12 @@ export default function Timeline ()
                                     <div
                                         className={ `w-8 h-8 rounded-full ${ step.color } flex items-center justify-center shadow-lg z-10` }
                                     >
-                                        {/* <FontAwesomeIcon icon={ step.icon } className='text-white w-4' /> */ }
+                                        <FontAwesomeIcon icon={ step.icon } className='text-white w-4' />
                                     </div>
                                     { step.point === "high" && (
                                         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-6">
                                             <div className="bg-red-100 text-red-700 w-8 h-8 rounded-full flex items-center justify-center">
-                                                <StarFilled />
+                                                <FontAwesomeIcon icon={ faStar } className='w-3' />
                                             </div>
                                         </div>
                                     ) }
@@ -54,7 +55,7 @@ export default function Timeline ()
                                                     step.color.replace( "bg-", "var(--tw-" ) + ")",
                                             } }
                                         >
-                                            {/* <FontAwesomeIcon icon={ step.icon } className='text-red w-4' /> */ }
+                                            <FontAwesomeIcon icon={ step.icon } className='text-red w-4' />
                                         </div>
                                         <h3 className="text-xl font-bold text-gray-800 mb-3 flex items-center">
                                             <span>{ step.title }</span>
@@ -77,7 +78,7 @@ export default function Timeline ()
                     </div>
                 </div>
                 <div className="w-sm justify-self-center p-2">
-                    <Button size="large" variant="solid" color="danger" icon={ <RightCircleFilled /> } iconPosition="end" fullWidth text="Start Your Journey Today" onClick={ () => { } } />
+                    <Button size="large" variant="solid" color="danger" icon={ <FontAwesomeIcon icon={ faArrowRight } /> } iconPosition="end" fullWidth text="Start Your Journey Today" onClick={ () => { } } />
                 </div>
             </div>
         </section>

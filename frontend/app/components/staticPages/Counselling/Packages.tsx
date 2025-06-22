@@ -1,6 +1,7 @@
-import { packages } from "@/app/lib/constants";
 import { Button } from "@/app/ui/button";
-import { CheckOutlined, ClockCircleOutlined } from "@ant-design/icons";
+import { packages } from "@/app/lib/constants";
+import { faCheck, faClock } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Packages ()
 {
@@ -36,7 +37,7 @@ export default function Packages ()
                                     { pkg.title }
                                 </h3>
                                 <div className="flex items-center mb-4">
-                                    <ClockCircleOutlined className="mr-2" />
+                                    <FontAwesomeIcon icon={ faClock } className="mr-2" />
                                     <span className="text-gray-600">{ pkg.duration }</span>
                                 </div>
                                 <div className="text-3xl font-bold text-gray-800 mb-6">
@@ -45,7 +46,7 @@ export default function Packages ()
                                 <ul className="mb-8">
                                     { pkg.features.map( ( feature, index ) => (
                                         <li key={ index } className="flex items-start mb-3">
-                                            <CheckOutlined size={ 50 } className="text-green-600 w-5" />
+                                            <FontAwesomeIcon icon={ faCheck } className="text-green-600 w-5 pr-1" />
                                             <span className="text-gray-600">{ feature }</span>
                                         </li>
                                     ) ) }
