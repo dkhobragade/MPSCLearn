@@ -31,7 +31,9 @@ export default function Header ()
             <div className="hidden lg:flex container mx-auto px-6 py-1 justify-between items-center">
                 <div className="flex items-center">
                     <div className="text-2xl font-bold text-blue-700 mr-8 flex items-center">
-                        <i className="fas fa-graduation-cap text-3xl mr-2"></i> DKMPSC
+                        <Link href="/">
+                            DKMPSC
+                        </Link>
                     </div>
                     { isMounted ?
                         <Menu items={ HeaderItems } mode="horizontal" onClick={ onMenuClick } />

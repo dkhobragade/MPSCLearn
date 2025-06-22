@@ -325,3 +325,29 @@ export const testimonials = [
             year: "2023",
         },
     ];
+
+
+
+export const categories = [
+    { id: "all", name: "All Categories" },
+    { id: "prelims", name: "Prelims" },
+    { id: "mains", name: "Mains" },
+    { id: "current-affairs", name: "Current Affairs" },
+    { id: "history", name: "History" },
+    { id: "geography", name: "Geography" },
+    { id: "polity", name: "Polity" },
+    { id: "economy", name: "Economy" },
+  ];
+
+export   const difficulties = [
+    { id: "all", name: "All Levels" },
+    { id: "easy", name: "Easy" },
+    { id: "medium", name: "Medium" },
+    { id: "hard", name: "Hard" },
+  ];
+
+export const types = [
+    { id: "all", name: "All Types" },
+    { id: "free", name: "Free" },
+    { id: "paid", name: "Premium" },
+  ];

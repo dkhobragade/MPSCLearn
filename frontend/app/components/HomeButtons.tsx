@@ -16,8 +16,8 @@ export function HomeButtons ()
 
     return (
         <ElemsRow>
-            <Button skeleton={ !isMounted } size="large" type="primary" icon={ <CaretRightOutlined /> } iconPosition="end" text="Start Learning" onClick={ () => { } } />
-            <Button skeleton={ !isMounted } size="large" icon={ <RightCircleFilled /> } iconPosition="end" text="Watch Demo" onClick={ () => { } } />
+            <Button skeleton={ !isMounted } fullWidth size="large" type="primary" icon={ <CaretRightOutlined /> } iconPosition="end" text="Start Learning" onClick={ () => { } } />
+            <Button skeleton={ !isMounted } fullWidth size="large" icon={ <RightCircleFilled /> } iconPosition="end" text="Watch Demo" onClick={ () => { } } />
         </ElemsRow>
     )
 }

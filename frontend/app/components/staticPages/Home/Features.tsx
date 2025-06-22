@@ -129,7 +129,7 @@ export default function Features ()
                     </div>
                 </div>
                 <div className="w-sm mt-16 justify-self-center p-2">
-                    <Button variant="solid" color="danger" size="large" icon={ <RightCircleFilled /> } iconPosition="end" fullWidth={ false } text="Explore All Features" onClick={ () => { } } />
+                    <Button variant="solid" color="danger" size="large" icon={ <RightCircleFilled /> } iconPosition="end" fullWidth text="Explore All Features" onClick={ () => { } } />
                 </div>
             </div>
         </section >

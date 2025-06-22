@@ -77,7 +77,7 @@ export default function Timeline ()
                     </div>
                 </div>
                 <div className="w-sm justify-self-center p-2">
-                    <Button size="large" variant="solid" color="danger" icon={ <RightCircleFilled /> } iconPosition="end" fullWidth={ false } text="Start Your Journey Today" onClick={ () => { } } />
+                    <Button size="large" variant="solid" color="danger" icon={ <RightCircleFilled /> } iconPosition="end" fullWidth text="Start Your Journey Today" onClick={ () => { } } />
                 </div>
             </div>
         </section>

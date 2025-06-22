@@ -122,13 +122,13 @@ export default function page ()
                         </div>
                     </Form.Item>
 
-                    <Button type="primary" size="large" text="Sign Up" onClick={ () => { } } />
+                    <Button type="primary" fullWidth size="large" text="Sign Up" onClick={ () => { } } />
 
                     <Divider className="my-6">
                         <span className="text-gray-500 text-sm px-2">OR</span>
                     </Divider>
 
-                    <Button text="Continue with Google" icon={ <GoogleOutlined className="!text-red-500 mr-3 w-5" color="red" /> } onClick={ () => { } } />
+                    <Button text="Continue with Google" fullWidth icon={ <GoogleOutlined className="!text-red-500 mr-3 w-5" color="red" /> } onClick={ () => { } } />
 
                     <div className="text-center mt-6">
                         <p className="text-gray-600 text-sm">
