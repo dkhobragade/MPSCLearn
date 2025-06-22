@@ -203,3 +203,125 @@ export const courseVideos = [
             progress: 0,
         },
     ];
+
+export const courseFeatures = [
+        {
+            // icon: <BookOutlined />,
+            title: "Comprehensive Study Material",
+            description:
+                "Expertly crafted notes covering the entire MPSC Prelims syllabus",
+        },
+        {
+            // icon: <FileTextOutlined />,
+            title: "Daily Practice Questions",
+            description:
+                "Topic-wise MCQs with detailed explanations to strengthen concepts",
+        },
+        {
+            // icon: <ClockCircleOutlined />,
+            title: "Time Management Strategies",
+            description:
+                "Techniques to optimize your time during the actual examination",
+        },
+        {
+            // icon: <TrophyOutlined />,
+            title: "Mock Tests Series",
+            description:
+                "Full-length practice tests simulating the actual exam pattern",
+        },
+        {
+            // icon: <TeamOutlined />,
+            title: "Doubt Clearing Sessions",
+            description: "Regular interactive sessions with subject matter experts",
+        },
+        {
+            // icon: <CalendarOutlined />,
+            title: "Structured Study Plan",
+            description: "Day-wise schedule to complete the syllabus efficiently",
+        },
+    ];
+
+
+export  const upcomingBatches = [
+        {
+            name: "Weekend Batch",
+            startDate: "July 1, 2025",
+            duration: "4 months",
+            mode: "Classroom",
+            seats: "Limited seats available",
+        },
+        {
+            name: "Weekday Batch",
+            startDate: "July 15, 2025",
+            duration: "3 months",
+            mode: "Classroom",
+            seats: "Filling fast",
+        },
+        {
+            name: "Online Batch",
+            startDate: "August 1, 2025",
+            duration: "4 months",
+            mode: "Online Live",
+            seats: "Open for registration",
+        },
+    ];
+
+
+
+export const syllabusData = [
+        {
+            paper: "Paper I (General Studies)",
+            marks: 100,
+            duration: "2 Hours",
+            sections: [
+                {
+                    name: "Current Events of State, National & International Importance",
+                    percentage: 20,
+                },
+                { name: "History of India & Maharashtra", percentage: 15 },
+                { name: "Geography of India & Maharashtra", percentage: 15 },
+                { name: "Indian Polity & Governance", percentage: 15 },
+                { name: "Economic & Social Development", percentage: 15 },
+                { name: "Environment & Biodiversity", percentage: 10 },
+                { name: "General Science & Technology", percentage: 10 },
+            ],
+        },
+        {
+            paper: "Paper II (CSAT)",
+            marks: 80,
+            duration: "2 Hours",
+            sections: [
+                { name: "Comprehension", percentage: 25 },
+                { name: "Interpersonal Skills & Communication", percentage: 15 },
+                { name: "Logical Reasoning & Analytical Ability", percentage: 25 },
+                { name: "Decision Making & Problem Solving", percentage: 15 },
+                { name: "General Mental Ability", percentage: 10 },
+                { name: "Basic Numeracy & Data Interpretation", percentage: 10 },
+            ],
+        },
+    ];
+
+
+export const testimonials = [
+        {
+            name: "Rahul Sharma",
+            rank: "MPSC Rank 12",
+            content:
+                "The prelims course at DKMPSC was instrumental in my success. The structured approach and quality study material helped me clear the exam with confidence.",
+            year: "2024",
+        },
+        {
+            name: "Priya Patil",
+            rank: "MPSC Rank 24",
+            content:
+                "I attribute my success in MPSC Prelims to the exceptional guidance provided by DKMPSC. Their focus on conceptual clarity and practice tests made all the difference.",
+            year: "2024",
+        },
+        {
+            name: "Amit Deshmukh",
+            rank: "MPSC Rank 37",
+            content:
+                "The prelims foundation course gave me a solid base to build upon. The faculty's expertise and personalized attention helped me overcome my weaknesses.",
+            year: "2023",
+        },
+    ];
