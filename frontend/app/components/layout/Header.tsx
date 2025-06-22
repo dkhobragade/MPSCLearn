@@ -73,12 +73,20 @@ export const HeaderItems = [
         icon: "",
         children: [
             {
-                label: 'Prelims',
+                label: (
+                    <Link href="/prelims" >
+                        Prelims
+                    </Link>
+                ),
                 key: 'pre',
                 icon: '',
             },
             {
-                label: 'Mains',
+                label: (
+                    <Link href="mains">
+                        Mains
+                    </Link>
+                ),
                 key: 'mains',
                 icon: '',
             },
@@ -95,12 +103,20 @@ export const HeaderItems = [
         icon: "",
         children: [
             {
-                label: 'Download',
+                label: (
+                    <Link href="download">
+                        Download
+                    </Link>
+                ),
                 key: 'download',
                 icon: '',
             },
             {
-                label: 'Test',
+                label: (
+                    <Link href="/test">
+                        Test
+                    </Link>
+                ),
                 key: 'test',
                 icon: '',
             },
