@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Button } from "@/app/ui/button";
 import { ElemsRow } from "@/app/ui/row";
@@ -23,21 +22,41 @@ export default function Header ()
 
     const onMenuClick: MenuProps[ 'onClick' ] = ( e ) =>
     {
-        setCurrentMenu( e.key )
-        console.log( 'click', e );
+        setCurrentMenu( e.key );
+        switch ( e.key )
+        {
+            case 'pre':
+                router.push( '/prelims' );
+                break;
+            case 'mains':
+                router.push( '/mains' );
+                break;
+            case 'download':
+                router.push( '/download' );
+                break;
+            case 'test':
+                router.push( '/test' );
+                break;
+            case 'freeinitiative':
+                router.push( '/freeinitiative' );
+                break;
+            case 'counselling':
+                router.push( '/counselling' );
+                break;
+            default:
+                break;
+        }
     };
 
     return (
         <header className="bg-white shadow-md fixed w-full z-50">
             <div className="hidden lg:flex container mx-auto px-6 py-1 justify-between items-center">
                 <div className="flex items-center">
-                    <div className="text-2xl font-bold text-blue-700 mr-8 flex items-center">
-                        <Link href="/">
-                            DKMPSC
-                        </Link>
+                    <div className="text-2xl font-bold text-blue-700 mr-8 flex items-center" onClick={ () => { router.push( '/' ), setCurrentMenu( " " ) } }>
+                        DKMPSC
                     </div>
                     { isMounted ?
-                        <Menu items={ HeaderItems } mode="horizontal" onClick={ onMenuClick } />
+                        <Menu items={ HeaderItems } selectedKeys={ [ currentMenu ] } mode="horizontal" onClick={ onMenuClick } />
                         : <MenuSkeleton />
                     }
                 </div>
@@ -63,9 +82,7 @@ export default function Header ()
 }
 
 
-
 export const HeaderItems = [
-
     {
         label: (
             <>
@@ -73,75 +90,41 @@ export const HeaderItems = [
             </>
         ),
         key: "courses",
-        icon: "",
         children: [
             {
-                label: (
-                    <Link href="/prelims" >
-                        Prelims
-                    </Link>
-                ),
+                label: "Prelims",
                 key: 'pre',
-                icon: '',
             },
             {
-                label: (
-                    <Link href="/mains">
-                        Mains
-                    </Link>
-                ),
+                label: "Mains",
                 key: 'mains',
-                icon: '',
             },
-
         ],
     },
     {
         label: (
             <>
-                PYQ <FontAwesomeIcon icon={ faChevronDown } />
+                PYQs <FontAwesomeIcon icon={ faChevronDown } />
             </>
         ),
         key: "pyq",
-        icon: "",
         children: [
             {
-                label: (
-                    <Link href="download">
-                        Download
-                    </Link>
-                ),
+                label: "Download",
                 key: 'download',
-                icon: '',
             },
             {
-                label: (
-                    <Link href="/test">
-                        Test
-                    </Link>
-                ),
+                label: "Test",
                 key: 'test',
-                icon: '',
             },
-
         ],
     },
     {
-        label: (
-            <Link href="/freeinitiative">
-                Free Initiative
-            </Link>
-        ),
+        label: "Free Initiative",
         key: 'freeinitiative',
-        icon: ""
     },
     {
-        label: (
-            <Link href="/counselling" >
-                Counselling
-            </Link>
-        ),
+        label: "Counselling",
         key: 'counselling',
-        icon: ""
     },
-]
+];

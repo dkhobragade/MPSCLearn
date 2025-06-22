@@ -1,8 +1,6 @@
-"use client"
-
-import { Button } from "../../../ui/button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight, faBookReader, faChalkboard, faChartLine, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+import { faBookReader, faChalkboard, faChartLine, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+import { CoursesBTN } from "../../HomeButtons";
 
 export default function Features ()
 {
@@ -129,7 +127,7 @@ export default function Features ()
                     </div>
                 </div>
                 <div className="w-sm mt-16 justify-self-center p-2">
-                    <Button variant="solid" color="danger" size="large" icon={ <FontAwesomeIcon icon={ faArrowRight } /> } iconPosition="end" fullWidth text="Explore All Features" onClick={ () => { } } />
+                    <CoursesBTN text="Explore All Features" />
                 </div>
             </div>
         </section >
