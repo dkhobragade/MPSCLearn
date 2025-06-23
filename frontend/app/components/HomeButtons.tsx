@@ -1,22 +1,18 @@
 "use client"
 
-import { useEffect, useState } from "react"
 import { Button } from "../ui/button"
 import { ElemsRow } from "../ui/row"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowRight, faCrown, faFileDownload, faInfoCircle, faPlayCircle } from "@fortawesome/free-solid-svg-icons"
 import { useRouter } from "next/navigation"
 import { CoursesButtonProps } from "../lib/definitions"
+import { useIsMounted } from "../hooks/useIsMounted"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faArrowRight, faCrown, faFileDownload, faInfoCircle, faPlayCircle } from "@fortawesome/free-solid-svg-icons"
+
 
 export function HomeButtons ()
 {
-    const [ isMounted, setIsMounted ] = useState( false )
+    const isMounted = useIsMounted()
     const router = useRouter()
-
-    useEffect( () =>
-    {
-        setIsMounted( true )
-    }, [] )
 
     return (
         <ElemsRow>
@@ -39,12 +35,7 @@ export function CoursesBTN ( props: CoursesButtonProps )
 
 export function DownloadBTN ()
 {
-    const [ isMounted, setIsMounted ] = useState( false )
-
-    useEffect( () =>
-    {
-        setIsMounted( true )
-    }, [] )
+    const isMounted = useIsMounted()
 
     return (
         <ElemsRow>
@@ -57,12 +48,7 @@ export function DownloadBTN ()
 
 export function TestBTN ()
 {
-    const [ isMounted, setIsMounted ] = useState( false )
-
-    useEffect( () =>
-    {
-        setIsMounted( true )
-    }, [] )
+    const isMounted = useIsMounted()
 
     return (
         <ElemsRow>
@@ -75,12 +61,7 @@ export function TestBTN ()
 
 export function CounsellingBTN ()
 {
-    const [ isMounted, setIsMounted ] = useState( false )
-
-    useEffect( () =>
-    {
-        setIsMounted( true )
-    }, [] )
+    const isMounted = useIsMounted()
 
     return (
         <ElemsRow>
