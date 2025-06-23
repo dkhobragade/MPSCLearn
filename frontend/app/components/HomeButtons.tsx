@@ -71,3 +71,21 @@ export function TestBTN ()
         </ElemsRow>
     )
 }
+
+
+export function CounsellingBTN ()
+{
+    const [ isMounted, setIsMounted ] = useState( false )
+
+    useEffect( () =>
+    {
+        setIsMounted( true )
+    }, [] )
+
+    return (
+        <ElemsRow>
+            <Button size="large" skeleton={ !isMounted } fullWidth type="primary" text="Book a Session Now" onClick={ () => { } } />
+            <Button size="large" skeleton={ !isMounted } fullWidth color="danger" variant="solid" text="Learn More" onClick={ () => { } } />
+        </ElemsRow>
+    )
+}

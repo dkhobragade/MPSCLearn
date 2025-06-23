@@ -3,16 +3,17 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { Divider, Form } from 'antd';
-import { Button } from '../ui/button';
-import { Input } from '../ui/input';
-import { PasswordInput } from '../ui/inputPassword';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLock, faPhone, faUser } from '@fortawesome/free-solid-svg-icons';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { Input } from '../ui/input';
+import { PasswordInput } from '../ui/inputPassword';
+import { Button } from '../ui/button';
 
 
 export default function page ()
 {
+
     const [ confirmPasswordVisible, setConfirmPasswordVisible ] =
         useState<boolean>( false );
 
@@ -148,19 +149,19 @@ export default function page ()
                     <div className="text-center mt-4">
                         <p className="text-xs text-gray-500">
                             By signing up, you agree to our
-                            <a
+                            <Link
                                 href="#"
                                 className="text-blue-600 hover:text-blue-800 mx-1"
                             >
                                 Terms of Service
-                            </a>
+                            </Link>
                             and
-                            <a
+                            <Link
                                 href="#"
                                 className="text-blue-600 hover:text-blue-800 mx-1"
                             >
                                 Privacy Policy
-                            </a>
+                            </Link>
                         </p>
                     </div>
                 </Form>

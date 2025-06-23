@@ -6,6 +6,7 @@ import Booking from "../components/staticPages/Counselling/Booking";
 import FAQ from "../components/staticPages/Counselling/FAQ";
 import Packages from "../components/staticPages/Counselling/Packages";
 import WhyUs from "../components/staticPages/Counselling/WhyUs";
+import { CounsellingBTN } from "../components/HomeButtons";
 
 
 export default function counselling ()
@@ -28,10 +29,7 @@ export default function counselling ()
                                 preparation strategy, clear your doubts, and increase your
                                 chances of success.
                             </p>
-                            <ElemsRow>
-                                <Button size="large" fullWidth type="primary" text="Book a Session Now" onClick={ () => { } } />
-                                <Button size="large" fullWidth color="danger" variant="solid" text="Learn More" onClick={ () => { } } />
-                            </ElemsRow>
+                            <CounsellingBTN />
                         </div>
                         <div className="md:w-1/2 flex justify-center">
                             <img
