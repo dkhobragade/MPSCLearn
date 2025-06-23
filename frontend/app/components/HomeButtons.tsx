@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { Button } from "../ui/button"
 import { ElemsRow } from "../ui/row"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowRight, faFileDownload, faInfoCircle, faPlayCircle } from "@fortawesome/free-solid-svg-icons"
+import { faArrowRight, faCrown, faFileDownload, faInfoCircle, faPlayCircle } from "@fortawesome/free-solid-svg-icons"
 import { useRouter } from "next/navigation"
 import { CoursesButtonProps } from "../lib/definitions"
 
@@ -50,6 +50,24 @@ export function DownloadBTN ()
         <ElemsRow>
             <Button fullWidth skeleton={ !isMounted } size="middle" type="primary" text="Download All Papers" icon={ <FontAwesomeIcon icon={ faFileDownload } className='mr-2' /> } onClick={ () => { } } />
             <Button fullWidth skeleton={ !isMounted } size="middle" variant="solid" color="danger" text="How to Use" icon={ <FontAwesomeIcon icon={ faInfoCircle } className='mr-2' /> } onClick={ () => { } } />
+        </ElemsRow>
+    )
+}
+
+
+export function TestBTN ()
+{
+    const [ isMounted, setIsMounted ] = useState( false )
+
+    useEffect( () =>
+    {
+        setIsMounted( true )
+    }, [] )
+
+    return (
+        <ElemsRow>
+            <Button fullWidth skeleton={ !isMounted } size="middle" type="primary" text="Explore Free Tests" icon={ <FontAwesomeIcon icon={ faArrowRight } className='mr-2' /> } onClick={ () => { } } />
+            <Button fullWidth skeleton={ !isMounted } size="middle" variant="solid" color="danger" text="View Premium Plans" icon={ <FontAwesomeIcon icon={ faCrown } className='mr-2' /> } onClick={ () => { } } />
         </ElemsRow>
     )
 }

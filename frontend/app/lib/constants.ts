@@ -330,27 +330,27 @@ export const testimonials = [
 
 
 export const categories = [
-    { id: "all", name: "All Categories" },
-    { id: "prelims", name: "Prelims" },
-    { id: "mains", name: "Mains" },
-    { id: "current-affairs", name: "Current Affairs" },
-    { id: "history", name: "History" },
-    { id: "geography", name: "Geography" },
-    { id: "polity", name: "Polity" },
-    { id: "economy", name: "Economy" },
+    { value: "all", label: "All Categories" },
+    { value: "prelims", label: "Prelims" },
+    { value: "mains", label: "Mains" },
+    { value: "current-affairs", label: "Current Affairs" },
+    { value: "history", label: "History" },
+    { value: "geography", label: "Geography" },
+    { value: "polity", label: "Polity" },
+    { value: "economy", label: "Economy" },
   ];
 
 export   const difficulties = [
-    { id: "all", name: "All Levels" },
-    { id: "easy", name: "Easy" },
-    { id: "medium", name: "Medium" },
-    { id: "hard", name: "Hard" },
+    { value: "all", label: "All Levels" },
+    { value: "easy", label: "Easy" },
+    { value: "medium", label: "Medium" },
+    { value: "hard", label: "Hard" },
   ];
 
 export const types = [
-    { id: "all", name: "All Types" },
-    { id: "free", name: "Free" },
-    { id: "paid", name: "Premium" },
+    { value: "all", label: "All Types" },
+    { value: "free", label: "Free" },
+    { value: "paid", label: "Premium" },
   ];
 
 

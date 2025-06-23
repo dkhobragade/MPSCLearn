@@ -1,5 +1,8 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Features from "../components/staticPages/Test/Features";
 import Section from "../components/staticPages/Test/Section";
+import { faChartLine, faFile } from "@fortawesome/free-solid-svg-icons";
+import { TestBTN } from "../components/HomeButtons";
 
 export default function Test ()
 {
@@ -22,14 +25,7 @@ export default function Test ()
                                 actual exam.
                             </p>
                             <div className="flex flex-wrap gap-4">
-                                <button className="px-8 py-4 bg-blue-700 text-white font-semibold rounded-lg shadow-xl hover:bg-blue-800 transition duration-300 transform hover:translate-y-[-2px] !rounded-button whitespace-nowrap cursor-pointer flex items-center">
-                                    <span>Explore Free Tests</span>
-                                    {/* <FontAwesomeIcon className='ml-2 w-5' icon={ faArrowRight } /> */ }
-                                </button>
-                                <button className="px-8 py-4 bg-white text-blue-700 font-semibold rounded-lg shadow-xl hover:bg-gray-50 transition duration-300 transform hover:translate-y-[-2px] !rounded-button whitespace-nowrap cursor-pointer flex items-center">
-                                    {/* <FontAwesomeIcon className='mr-2 w-5' icon={ faCrown } /> */ }
-                                    <span>View Premium Plans</span>
-                                </button>
+                                <TestBTN />
                             </div>
                         </div>
                         <div className="md:w-1/2 relative">
@@ -41,7 +37,7 @@ export default function Test ()
                             <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg">
                                 <div className="flex items-center gap-3">
                                     <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                                        {/* <FontAwesomeIcon icon={ faFile } className='text-blue-600 w-5' /> */ }
+                                        <FontAwesomeIcon icon={ faFile } className='text-blue-600 w-5' />
                                     </div>
                                     <div>
                                         <div className="font-bold text-gray-900">1500+</div>
@@ -54,7 +50,7 @@ export default function Test ()
                             <div className="absolute -top-6 -right-6 bg-white p-4 rounded-xl shadow-lg">
                                 <div className="flex items-center gap-3">
                                     <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                                        {/* <FontAwesomeIcon icon={ faChartLine } className='text-green-600  w-5' /> */ }
+                                        <FontAwesomeIcon icon={ faChartLine } className='text-green-600  w-5' />
                                     </div>
                                     <div>
                                         <div className="font-bold text-gray-900">Advanced</div>

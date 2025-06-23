@@ -1,3 +1,6 @@
+import { faBullseye, faChartPie, faBookOpen, faLightbulb } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 export default function Features ()
 {
     return (
@@ -16,7 +19,7 @@ export default function Features ()
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div className="bg-blue-50 rounded-xl p-6 text-center hover:shadow-md transition-shadow">
                         <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                            {/* <FontAwesomeIcon className='text-blue-600 w-5' icon={ faBullseye } /> */ }
+                            <FontAwesomeIcon className='text-blue-600 w-5' icon={ faBullseye } />
                         </div>
                         <h3 className="text-xl font-bold text-gray-800 mb-3">
                             Exam-Like Experience
@@ -29,7 +32,7 @@ export default function Features ()
 
                     <div className="bg-purple-50 rounded-xl p-6 text-center hover:shadow-md transition-shadow">
                         <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                            {/* <FontAwesomeIcon className='text-purple-600 w-5' icon={ faChartPie } /> */ }
+                            <FontAwesomeIcon className='text-purple-600 w-5' icon={ faChartPie } />
                         </div>
                         <h3 className="text-xl font-bold text-gray-800 mb-3">
                             Detailed Analysis
@@ -42,7 +45,7 @@ export default function Features ()
 
                     <div className="bg-green-50 rounded-xl p-6 text-center hover:shadow-md transition-shadow">
                         <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                            {/* <FontAwesomeIcon icon={ faBookOpen } className='text-green-600 w-5' /> */ }
+                            <FontAwesomeIcon icon={ faBookOpen } className='text-green-600 w-5' />
                         </div>
                         <h3 className="text-xl font-bold text-gray-800 mb-3">
                             Extensive Coverage
@@ -55,7 +58,7 @@ export default function Features ()
 
                     <div className="bg-amber-50 rounded-xl p-6 text-center hover:shadow-md transition-shadow">
                         <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                            {/* <FontAwesomeIcon icon={ faLightbulb } className='text-amber-600 w-5' /> */ }
+                            <FontAwesomeIcon icon={ faLightbulb } className='text-amber-600 w-5' />
                         </div>
                         <h3 className="text-xl font-bold text-gray-800 mb-3">
                             Expert Solutions
