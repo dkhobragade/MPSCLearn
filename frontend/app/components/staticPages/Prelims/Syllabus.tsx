@@ -1,7 +1,7 @@
-import { Progress } from "antd";
 import { syllabusData } from "@/app/lib/constants";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBook } from "@fortawesome/free-solid-svg-icons";
+import Progress from "@/app/ui/progress";
 
 export default function Syllabus ()
 {
@@ -43,7 +43,7 @@ export default function Syllabus ()
                                         </span>
                                     </div>
                                     <Progress
-                                        percent={ section.percentage }
+                                        percentage={ section.percentage }
                                         showInfo={ false }
                                         strokeColor="#2563EB"
                                         trailColor="#EFF6FF"

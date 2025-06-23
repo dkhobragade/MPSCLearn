@@ -52,7 +52,7 @@ export default function Header ()
         <header className="bg-white shadow-md fixed w-full z-50">
             <div className="hidden lg:flex container mx-auto px-6 py-1 justify-between items-center">
                 <div className="flex items-center">
-                    <div className="text-2xl font-bold text-blue-700 mr-8 flex items-center" onClick={ () => { router.push( '/' ), setCurrentMenu( " " ) } }>
+                    <div className="text-2xl font-bold text-blue-700 mr-8 flex items-center cursor-pointer" onClick={ () => { router.push( '/' ), setCurrentMenu( " " ) } }>
                         DKMPSC
                     </div>
                     { isMounted ?

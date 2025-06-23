@@ -352,3 +352,72 @@ export const types = [
     { id: "free", name: "Free" },
     { id: "paid", name: "Premium" },
   ];
+
+
+export const feeStructureColumn = [
+    {
+    title: 'Course Type',
+    dataIndex:'type',
+    key: 'type',
+   },
+    {
+    title: 'Fee',
+    dataIndex:'fee',
+    key: 'fee',
+   },
+    {
+    title: 'Duration',
+    dataIndex:'duration',
+    key: 'duration',
+   },
+]
+
+export const feeStructureData = [
+
+    {
+        key:'1',
+        type:'Classroom Program',
+        fee:'45000',
+        duration:'4 Months'
+    },
+    {
+        key:'2',
+        type:'Online Live Program',
+        fee:'45000',
+        duration:'4 Months'
+    },
+    {
+        key:'3',
+        type:'Weekend Batch',
+        fee:'45000',
+        duration:'4 Months'
+    }
+]
+
+
+export const PrelimsExamPattern = [
+    {
+        title:'Two compulsory papers (objective type)'
+    },
+    {
+        title:'Paper I: General Studies - 100 marks (100 questions)'
+    },
+    {
+        title:'Paper II: CSAT - 80 marks (80 questions)'
+    },
+    {
+        title:'Duration: 2 hours for each paper'
+    },
+    {
+        title:`Negative marking: 1/4th mark deducted for each wrong
+                                answer`
+    },
+]
+
+export const YearFilter = [
+    { value: '1' , label: "2024" },
+    { value: '2' , label: "2023" },
+    { value: '3' , label: "2022" },
+    { value: '4' , label: "2021" },
+    { value: '5' , label: "2020" },
+]

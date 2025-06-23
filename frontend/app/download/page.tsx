@@ -1,11 +1,17 @@
 import { Tabs, Tag } from "antd";
 import TabPane from "antd/es/tabs/TabPane";
+import Searchbar from "../ui/searchBar";
+import Dropdown from "../ui/dropdown";
+import { YearFilter } from "../lib/constants";
+import { DownloadBTN } from "../components/HomeButtons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBookOpen, faDownload, faEye, faFileAlt, faFileArchive, faInfoCircle, faKey, faLightbulb, faPenFancy, } from "@fortawesome/free-solid-svg-icons";
 
 export default function Download ()
 {
     return (
         <>
-            <section className="relative overflow-hidden bg-gradient-to-r from-blue-50 to-indigo-50 min-h-[50vh] flex items-center">
+            <section className="relative overflow-hidden pt-5  bg-gradient-to-r from-blue-50 to-indigo-50 min-h-[50vh] flex items-center">
                 <div className="absolute inset-0 z-0">
                     <img
                         src="https://readdy.ai/api/search-image?query=modern%20abstract%20background%20with%20floating%20papers%20and%20documents%2C%20light%20blue%20and%20white%20color%20scheme%2C%20minimalist%20design%20perfect%20for%20download%20page%2C%20ensuring%20text%20readability&width=1440&height=400&seq=15&orientation=landscape"
@@ -22,26 +28,17 @@ export default function Download ()
                             Access and download MPSC previous year question papers from 2015
                             to 2024. Complete with answer keys and detailed solutions.
                         </p>
-                        <div className="flex gap-4">
-                            <button className="px-6 py-3 bg-blue-700 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-800 transition duration-300 !rounded-button whitespace-nowrap cursor-pointer flex items-center">
-                                {/* <FontAwesomeIcon icon={ faFileDownload } className='mr-2' /> */ }
-                                <span>Download All Papers</span>
-                            </button>
-                            <button className="px-6 py-3 bg-white text-blue-700 font-semibold rounded-lg shadow-lg hover:bg-gray-50 transition duration-300 !rounded-button whitespace-nowrap cursor-pointer flex items-center">
-                                {/* <FontAwesomeIcon icon={ faInfoCircle } className='mr-2' /> */ }
-                                <span>How to Use</span>
-                            </button>
-                        </div>
+                        <DownloadBTN />
                     </div>
                 </div>
             </section>
-            <section className="bg-white py-16">
+            <section className="bg-white">
                 <div className="container mx-auto px-6">
                     <div className="bg-blue-50 rounded-xl p-8 mt-12">
                         <div className="flex items-start space-x-6">
                             <div className="flex-shrink-0">
                                 <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                                    {/* <FontAwesomeIcon icon={ faInfoCircle } className='text-blue-600 text-2xl' /> */ }
+                                    <FontAwesomeIcon icon={ faInfoCircle } className='text-blue-600 text-2xl' />
                                 </div>
                             </div>
                             <div>
@@ -108,20 +105,8 @@ export default function Download ()
                                 </p>
                             </div>
                             <div className="flex gap-4">
-                                <div className="relative">
-                                    <input
-                                        type="text"
-                                        placeholder="Search by year or subject..."
-                                        className="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
-                                    />
-                                    {/* <FontAwesomeIcon icon={ faSearch } className='absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5' /> */ }
-                                </div>
-                                <select className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
-                                    <option value="">Filter by Year</option>
-                                    <option value="2024">2024</option>
-                                    <option value="2023">2023</option>
-                                    <option value="2022">2022</option>
-                                </select>
+                                <Searchbar placeholder="Search by year or subject..." />
+                                <Dropdown options={ YearFilter } placeholder="Filter by Year" />
                             </div>
                         </div>
                         {/* Tabs */ }
@@ -129,7 +114,7 @@ export default function Download ()
                             <TabPane
                                 tab={
                                     <span>
-                                        {/* <FontAwesomeIcon icon={ faBookOpen } className='mr-2' /> */ }
+                                        <FontAwesomeIcon icon={ faBookOpen } className='mr-2' />
                                         Prelims
                                     </span>
                                 }
@@ -162,15 +147,15 @@ export default function Download ()
                                                             <span className="font-medium text-gray-700">
                                                                 Set { set }
                                                             </span>
-                                                            {/* <FontAwesomeIcon icon={ faFileAlt } className='text-blue-600' /> */ }
+                                                            <FontAwesomeIcon icon={ faFileAlt } className='text-blue-600' />
                                                         </div>
                                                         <div className="space-y-2">
                                                             <button className="w-full py-2 text-left text-blue-600 hover:text-blue-800 font-medium flex items-center">
-                                                                {/* <FontAwesomeIcon icon={ faDownload } className='mr-2' /> */ }
+                                                                <FontAwesomeIcon icon={ faDownload } className='mr-2' />
                                                                 <span>Question Paper</span>
                                                             </button>
                                                             <button className="w-full py-2 text-left text-green-600 hover:text-green-800 font-medium flex items-center">
-                                                                {/* <FontAwesomeIcon icon={ faKey } className='mr-2' /> */ }
+                                                                <FontAwesomeIcon icon={ faKey } className='mr-2' />
                                                                 <span>Answer Key</span>
                                                             </button>
                                                         </div>
@@ -180,16 +165,16 @@ export default function Download ()
                                             <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-200">
                                                 <div className="flex items-center space-x-4">
                                                     <span className="text-gray-600">
-                                                        {/* <FontAwesomeIcon icon={ faDownload } className='mr-1' /> */ }
+                                                        <FontAwesomeIcon icon={ faDownload } className='mr-1' />
                                                         5k+ downloads
                                                     </span>
                                                     <span className="text-gray-600">
-                                                        {/* <FontAwesomeIcon icon={ faEye } className='mr-1' /> */ }
+                                                        <FontAwesomeIcon icon={ faEye } className='mr-1' />
                                                         12k views
                                                     </span>
                                                 </div>
                                                 <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors !rounded-button whitespace-nowrap cursor-pointer flex items-center">
-                                                    {/* <FontAwesomeIcon icon={ faFileArchive } className='mr-2' /> */ }
+                                                    <FontAwesomeIcon icon={ faFileArchive } className='mr-2' />
                                                     <span>Download All Sets</span>
                                                 </button>
                                             </div>
@@ -200,7 +185,7 @@ export default function Download ()
                             <TabPane
                                 tab={
                                     <span>
-                                        {/* <FontAwesomeIcon icon={ faPenFancy } className='mr-2' /> */ }
+                                        <FontAwesomeIcon icon={ faPenFancy } className='mr-2' />
                                         Mains
                                     </span>
                                 }
@@ -233,19 +218,19 @@ export default function Download ()
                                                             <span className="font-medium text-gray-700">
                                                                 { paper }
                                                             </span>
-                                                            {/* <FontAwesomeIcon icon={ faFileAlt } className='text-purple-600' /> */ }
+                                                            <FontAwesomeIcon icon={ faFileAlt } className='text-purple-600' />
                                                         </div>
                                                         <div className="space-y-2">
                                                             <button className="w-full py-2 text-left text-purple-600 hover:text-purple-800 font-medium flex items-center">
-                                                                {/* <FontAwesomeIcon icon={ faDownload } /> */ }
+                                                                <FontAwesomeIcon icon={ faDownload } />
                                                                 <span>Question Paper</span>
                                                             </button>
                                                             <button className="w-full py-2 text-left text-green-600 hover:text-green-800 font-medium flex items-center">
-                                                                {/* <FontAwesomeIcon icon={ faKey } className='mr-2' /> */ }
+                                                                <FontAwesomeIcon icon={ faKey } className='mr-2' />
                                                                 <span>Answer Key</span>
                                                             </button>
                                                             <button className="w-full py-2 text-left text-orange-600 hover:text-orange-800 font-medium flex items-center">
-                                                                {/* <FontAwesomeIcon icon={ faLightbulb } className='mr-2' /> */ }
+                                                                <FontAwesomeIcon icon={ faLightbulb } className='mr-2' />
                                                                 <span>Model Answers</span>
                                                             </button>
                                                         </div>
@@ -255,15 +240,15 @@ export default function Download ()
                                             <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-200">
                                                 <div className="flex items-center space-x-4">
                                                     <span className="text-gray-600">
-                                                        {/* <FontAwesomeIcon icon={ faDownload } />3k+ */ }
+                                                        <FontAwesomeIcon icon={ faDownload } />3k+
                                                         downloads
                                                     </span>
                                                     <span className="text-gray-600">
-                                                        {/* <FontAwesomeIcon icon={ faEye } className='mr-1' /> 8k views */ }
+                                                        <FontAwesomeIcon icon={ faEye } className='mr-1' /> 8k views
                                                     </span>
                                                 </div>
                                                 <button className="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors !rounded-button whitespace-nowrap cursor-pointer flex items-center">
-                                                    {/* <FontAwesomeIcon icon={ faFileArchive } className='mr-2' /> */ }
+                                                    <FontAwesomeIcon icon={ faFileArchive } className='mr-2' />
                                                     <span>Download Complete Set</span>
                                                 </button>
                                             </div>
