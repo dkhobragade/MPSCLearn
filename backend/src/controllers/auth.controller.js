@@ -48,8 +48,41 @@ export const signup = async (req,res) => {
     }
 }
 
-export const login =(req,res)=>{
-    res.send("login")
+export const login = async (req,res) => {
+
+    const { email , password } = req.body
+
+    try {
+
+        const user = await User.findOne({email})
+
+        if (!user) {
+            return res.status(400).json({message:"Invalid credentials,user not exists"})
+        }
+
+        const isPasswordValid = await bcryptjs.compare(password,user.password)
+
+        if(!isPasswordValid){
+            return res.status(400).json({message:"Invalid Password"})
+        }
+
+        generateJWTToken(user._id,res)
+
+        res.status(200).json({
+            _id:user._id,
+            fullname:user.fullname,
+            email:user.email,
+            mobileno:user.mobileno,
+            createdAt:user.createdAt
+        })
+
+
+    } catch (error) {
+        console.log("Error while login",error.message)
+        res.status(500).json({
+            message:"Internal Server Error"
+        })
+    }
 }
 
 export const logout =(req,res)=>{
