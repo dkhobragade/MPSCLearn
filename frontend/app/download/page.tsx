@@ -110,7 +110,7 @@ export default function Download ()
                             </div>
                         </div>
                         {/* Tabs */ }
-                        <Tabs defaultActiveKey="prelims" className="custom-tabs">
+                        {/* <Tabs defaultActiveKey="prelims" className="custom-tabs">
                             <TabPane
                                 tab={
                                     <span>
@@ -256,7 +256,7 @@ export default function Download ()
                                     ) ) }
                                 </div>
                             </TabPane>
-                        </Tabs>
+                        </Tabs> */}
                     </div>
                 </div>
             </section>

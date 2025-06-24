@@ -31,7 +31,6 @@ export default function page ()
                     </p>
                 </div>
 
-
                 <Form layout="vertical" className="mt-6">
                     <Form.Item
                         name="email"
