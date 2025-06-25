@@ -101,3 +101,40 @@ export const logout =(req,res)=>{
         res.status(500).json({message:"Internal server error"})
     }
 }
+
+export const forgetPassword = async (req,res) => {
+
+    const { email , password }= req.body
+
+    try {
+
+        const user = await User.findOne({email})
+
+       if (!user) {
+            return res.status(404).json({ message: "No account found associated with this email." });
+        }
+
+        if (!password) {
+            return res.status(400).json({ message: "Please enter the new password." });
+        }
+
+        if (password.length < 6) {
+            return res.status(400).json({ message: "Password must be at least 6 characters." });
+        }
+
+        const salt = await bcryptjs.genSalt(10)
+        const hashpassword = await bcryptjs.hash(password,salt)
+
+        await User.findByIdAndUpdate(user._id, {
+            password: hashpassword,
+        });
+
+        res.status(200).json({ message: "Password updated successfully" })
+
+
+    } catch (error) {
+        console.log("Error while resetting the password",error.message)
+        res.status(500).json({message:"Internal Server Error"})
+    }
+
+}
