@@ -1,4 +1,6 @@
+import { sendResetEmail } from "../lib/sendEmail.js"
 import { generateJWTToken } from "../lib/utils.js"
+import PasswordTokenSchema from "../models/passwordReset.model.js"
 import User from "../models/user.model.js"
 import bcryptjs from "bcryptjs"
 
@@ -102,39 +104,112 @@ export const logout =(req,res)=>{
     }
 }
 
+// export const forgetPassword = async (req,res) => {
+
+//     const { email , password }= req.body
+
+//     try {
+
+//         const user = await User.findOne({email})
+
+//        if (!user) {
+//             return res.status(404).json({ message: "No account found associated with this email." });
+//         }
+
+//         if (!password) {
+//             return res.status(400).json({ message: "Please enter the new password." });
+//         }
+
+//         if (password.length < 6) {
+//             return res.status(400).json({ message: "Password must be at least 6 characters." });
+//         }
+
+//         const salt = await bcryptjs.genSalt(10)
+//         const hashpassword = await bcryptjs.hash(password,salt)
+
+//         await User.findByIdAndUpdate(user._id, {
+//             password: hashpassword,
+//         });
+
+//         res.status(200).json({ message: "Password updated successfully" })
+
+
+//     } catch (error) {
+//         console.log("Error while resetting the password",error.message)
+//         res.status(500).json({message:"Internal Server Error"})
+//     }
+
+// }
+
+
 export const forgetPassword = async (req,res) => {
 
-    const { email , password }= req.body
+    const { email } = req.body
 
     try {
 
         const user = await User.findOne({email})
 
-       if (!user) {
-            return res.status(404).json({ message: "No account found associated with this email." });
-        }
+        if (!user) return res.status(400).json({message:"No user with this email."})
 
-        if (!password) {
-            return res.status(400).json({ message: "Please enter the new password." });
-        }
+        await PasswordTokenSchema.deleteMany({userId : user._id})
 
-        if (password.length < 6) {
-            return res.status(400).json({ message: "Password must be at least 6 characters." });
-        }
+        const token = "HQwdhC9OVrfFdQYtyHXAMpRQSXiCrGytgv1cAyfhk5r78ZiAaWLwKBM7ip3kcxeH"
 
-        const salt = await bcryptjs.genSalt(10)
-        const hashpassword = await bcryptjs.hash(password,salt)
+        const resetToken = new PasswordTokenSchema({
+            userId : user._id,
+            token,
+            expiresAt: Date.now() + 1000 * 60 * 15
+        })
 
-        await User.findByIdAndUpdate(user._id, {
-            password: hashpassword,
-        });
+        await resetToken.save()
 
-        res.status(200).json({ message: "Password updated successfully" })
+        const resetLink = `http://localhost:3000/reset-password/${token}`
 
+        await sendResetEmail(email,resetLink)
+
+        res.status(200).json({ message: "Reset link sent to your email." });
 
     } catch (error) {
-        console.log("Error while resetting the password",error.message)
-        res.status(500).json({message:"Internal Server Error"})
-    }
+        console.error("Forgot Password Error:", error.message);
+        res.status(500).json({ message: "Something went wrong." });
 
+    }
+}
+
+export const resetPassword = async (req,res) => {
+
+    const { token } = req.params
+    const { newPassword } = req.body
+
+    try {
+
+        const resetToken  = await PasswordTokenSchema.findOne({
+            token,
+            expiresAt: { $gt: Date.now() },
+        })
+
+        if (!resetToken) return res.status(400).json({ message: "Invalid or expired token." })
+
+        const user = await User.findById(resetToken.userId)
+
+        if (!user) return res.status(404).json({ message: "User not found." })
+
+        const salt = await bcryptjs.genSalt(10);
+        const hashedPassword = await bcryptjs.hash(newPassword, salt);
+
+        user.password = hashedPassword
+
+        await user.save()
+
+        await PasswordTokenSchema.deleteOne({ _id : resetToken._id })
+
+        res.status(200).json({ message: "Password reset successfully." });
+
+    } catch (error) {
+
+        console.error("Reset Password Error:", error.message);
+        res.status(500).json({ message: "Something went wrong." });
+
+    }
 }
