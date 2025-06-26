@@ -32,6 +32,8 @@ export default function page ()
         confirmPass: ''
     } )
 
+    const [ isLoading, SetIsLoading ] = useState<boolean>( false )
+
     const [ confirmPasswordVisible, setConfirmPasswordVisible ] =
         useState<boolean>( false );
 
@@ -46,24 +48,40 @@ export default function page ()
         }
         else if ( type === "email" )
         {
-            if ( !e.target.value.trim() ) toast.error( "Enter the fullName" );
+            if ( !e.target.value.trim() ) toast.error( "Enter the email" );
             setFormData( { ...fromData, email: e.target.value } );
         }
         else if ( type === "mobileno" )
         {
-            if ( !e.target.value.trim() ) toast.error( "Enter the fullName" );
+            if ( !e.target.value.trim() ) toast.error( "Enter the mobileno" );
             setFormData( { ...fromData, mobileno: e.target.value } );
         }
         else if ( type === "password" )
         {
-            if ( !e.target.value.trim() ) toast.error( "Enter the fullName" );
+            if ( !e.target.value.trim() ) toast.error( "Enter the password" );
             setFormData( { ...fromData, password: e.target.value } );
         }
         else if ( type === "confPassword" )
         {
-            if ( !e.target.value.trim() ) toast.error( "Enter the fullName" );
+            if ( !e.target.value.trim() ) toast.error( "Enter the confirm Password" );
             setFormData( { ...fromData, confirmPass: e.target.value } );
         }
+    }
+
+    const onClickSignUp = async ( e: { preventDefault: () => void } ) =>
+    {
+        SetIsLoading( true )
+        e.preventDefault()
+        await signup( fromData )
+        toast.success( "Account Created Successfully" )
+        SetIsLoading( false )
+        setFormData( {
+            fullname: '',
+            mobileno: '',
+            email: '',
+            password: '',
+            confirmPass: ''
+        } )
     }
 
     console.log( fromData )
@@ -176,7 +194,7 @@ export default function page ()
                         </div>
                     </Form.Item>
 
-                    <Button type="primary" fullWidth size="large" text="Sign Up" onClick={ ( e: any ) => { e.preventDefault(), signup( fromData ) } } />
+                    <Button loading={ isLoading } type="primary" fullWidth size="large" text="Sign Up" onClick={ onClickSignUp } />
 
                     <Divider className="my-6">
                         <span className="text-gray-500 text-sm px-2">OR</span>
