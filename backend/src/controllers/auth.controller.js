@@ -164,7 +164,7 @@ export const forgetPassword = async (req,res) => {
 
         await resetToken.save()
 
-        const resetLink = `http://localhost:3000/reset-password/${token}`
+        const resetLink = `http://localhost:5001/reset-password/${token}`
 
         await sendResetEmail(email,resetLink)
 

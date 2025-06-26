@@ -6,7 +6,7 @@ export const sendResetEmail = async (email,resetLink) => {
         service:"gmail",
         auth:{
             user:process.env.GMAIL,
-            pass:process.env.GAMIL_PASS
+            pass:process.env.GMAIL_PASS
         }
     })
 
