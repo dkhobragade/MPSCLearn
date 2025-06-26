@@ -5,7 +5,7 @@ interface InputProps
 {
     placeholder?: string
     value?: string
-    onChange: () => void
+    onChange: ( e: React.ChangeEvent<HTMLInputElement> ) => void,
     size?: "large" | "middle" | "small"
     prefix?: ReactNode
 }

@@ -2,20 +2,71 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Divider, Form } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLock, faPhone, faUser } from '@fortawesome/free-solid-svg-icons';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { Input } from '../ui/input';
 import { PasswordInput } from '../ui/inputPassword';
 import { Button } from '../ui/button';
+import { Divider, Form } from 'antd/es';
+import toast from 'react-hot-toast';
+import { useAuthStore } from '../store/useAuthStore';
 
+interface FormData
+{
+    fullname: string;
+    email: string;
+    mobileno: string;
+    password: string;
+    confirmPass: string;
+}
 
 export default function page ()
 {
 
+    const [ fromData, setFormData ] = useState<FormData>( {
+        fullname: '',
+        email: '',
+        mobileno: '',
+        password: '',
+        confirmPass: ''
+    } )
+
     const [ confirmPasswordVisible, setConfirmPasswordVisible ] =
         useState<boolean>( false );
+
+    const { signup } = useAuthStore()
+
+    const onChangeFormData = ( e: React.ChangeEvent<HTMLInputElement>, type: string ) =>
+    {
+        if ( type === "fullname" )
+        {
+            if ( !e.target.value.trim() ) toast.error( "Enter the fullName" );
+            setFormData( { ...fromData, fullname: e.target.value } );
+        }
+        else if ( type === "email" )
+        {
+            if ( !e.target.value.trim() ) toast.error( "Enter the fullName" );
+            setFormData( { ...fromData, email: e.target.value } );
+        }
+        else if ( type === "mobileno" )
+        {
+            if ( !e.target.value.trim() ) toast.error( "Enter the fullName" );
+            setFormData( { ...fromData, mobileno: e.target.value } );
+        }
+        else if ( type === "password" )
+        {
+            if ( !e.target.value.trim() ) toast.error( "Enter the fullName" );
+            setFormData( { ...fromData, password: e.target.value } );
+        }
+        else if ( type === "confPassword" )
+        {
+            if ( !e.target.value.trim() ) toast.error( "Enter the fullName" );
+            setFormData( { ...fromData, confirmPass: e.target.value } );
+        }
+    }
+
+    console.log( fromData )
 
     return (
         <div className="min-h-screen bg-gray-50 flex flex-col justify-center items-center py-12 px-4 sm:px-6 lg:px-8">
@@ -35,7 +86,7 @@ export default function page ()
                         ] }
                         className="mb-4"
                     >
-                        <Input size="large" prefix={ <FontAwesomeIcon icon={ faUser } className="text-gray-400 mr-2" /> } placeholder='Full Name' onChange={ () => { } } />
+                        <Input size="large" prefix={ <FontAwesomeIcon icon={ faUser } className="text-gray-400 mr-2" /> } placeholder='Full Name' onChange={ ( e: React.ChangeEvent<HTMLInputElement> ) => onChangeFormData( e, "fullname" ) } />
                     </Form.Item>
 
                     <Form.Item
@@ -54,7 +105,7 @@ export default function page ()
                     >
                         <Input prefix={ <FontAwesomeIcon icon={ faEnvelope } className="text-gray-400 mr-2" /> }
                             placeholder="Email Address"
-                            size="large" onChange={ () => { } } />
+                            size="large" onChange={ ( e: React.ChangeEvent<HTMLInputElement> ) => onChangeFormData( e, "email" ) } />
                     </Form.Item>
 
                     <Form.Item
@@ -73,7 +124,7 @@ export default function page ()
                     >
                         <Input prefix={ <FontAwesomeIcon icon={ faPhone } className="text-gray-400 mr-2" /> }
                             placeholder="Mobile Number"
-                            size="large" onChange={ () => { } } />
+                            size="large" onChange={ ( e: React.ChangeEvent<HTMLInputElement> ) => onChangeFormData( e, "mobileno" ) } />
                     </Form.Item>
 
                     <Form.Item
@@ -89,15 +140,15 @@ export default function page ()
                     >
                         <PasswordInput prefix={ <FontAwesomeIcon icon={ faLock } className="text-gray-400 mr-2" /> }
                             placeholder="Password"
-                            size="large" onChange={ () => { } } />
+                            size="large" onChange={ ( e: React.ChangeEvent<HTMLInputElement> ) => onChangeFormData( e, "password" ) } />
                     </Form.Item>
                     <Form.Item
                         name="confirmPassword"
                         dependencies={ [ "password" ] }
                         rules={ [
                             { required: true, message: "Please confirm your password!" },
-                            ( { getFieldValue } ) => ( {
-                                validator ( _, value )
+                            ( { getFieldValue }: any ) => ( {
+                                validator ( _: any, value: any )
                                 {
                                     if ( !value || getFieldValue( "password" ) === value )
                                     {
@@ -114,7 +165,7 @@ export default function page ()
                         <div className="relative">
                             <PasswordInput prefix={ <FontAwesomeIcon icon={ faLock } className="text-gray-400 mr-2" /> }
                                 placeholder="Confirm Password"
-                                size="large" onChange={ () => { } } />
+                                size="large" onChange={ ( e: React.ChangeEvent<HTMLInputElement> ) => onChangeFormData( e, "confPassword" ) } />
                             <div
                                 className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-400"
                                 onClick={ () =>
@@ -125,7 +176,7 @@ export default function page ()
                         </div>
                     </Form.Item>
 
-                    <Button type="primary" fullWidth size="large" text="Sign Up" onClick={ () => { } } />
+                    <Button type="primary" fullWidth size="large" text="Sign Up" onClick={ ( e: any ) => { e.preventDefault(), signup( fromData ) } } />
 
                     <Divider className="my-6">
                         <span className="text-gray-500 text-sm px-2">OR</span>

@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
-import { Button as PrimaryButton } from 'antd'
 import { ButtonSkeleton } from './skeletons'
+import { Button as PrimaryButton } from 'antd'
 
 interface ButtonProps
 {

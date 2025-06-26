@@ -3,6 +3,7 @@ import "./globals.css";
 import "antd/dist/reset.css";
 import { Inter, Roboto } from "next/font/google";
 import LayoutWrapper from "./components/layout/LayoutWrapper";
+import { Toaster } from "react-hot-toast";
 
 const intern = Inter( {
   subsets: [ 'latin' ],
@@ -33,6 +34,7 @@ export default function RootLayout ( {
         <LayoutWrapper>
           { children }
         </LayoutWrapper>
+        <Toaster position="bottom-right" />
       </body>
     </html>
   );
