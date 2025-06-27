@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { Checkbox } from "../ui/checkbox";
@@ -10,14 +10,53 @@ import type { CheckboxChangeEvent } from "antd/es/checkbox";
 import { PasswordInput } from "../ui/inputPassword";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
+import { useAuthStore } from "../store/useAuthStore";
+import toast from "react-hot-toast";
+
+interface FormData
+{
+    email: string,
+    password: string
+}
 
 export default function page ()
 {
-    const [ isChecked, setIsChecked ] = useState( false )
+    const { login } = useAuthStore()
+    const [ isChecked, setIsChecked ] = useState<boolean>( false )
+    const [ formData, setFormData ] = useState<FormData>( {
+        email: '',
+        password: ''
+    } )
+    const [ isLoading, SetIsLoading ] = useState<boolean>( false )
 
     const onCheckBoxChange = ( e: CheckboxChangeEvent ) =>
     {
         setIsChecked( e.target.checked );
+    }
+
+
+    const onChangeEmailOrMoble = ( e: React.ChangeEvent<HTMLInputElement> ) =>
+    {
+        setFormData( { ...formData, email: e.target.value } )
+    }
+
+    const onChangePassword = ( e: React.ChangeEvent<HTMLInputElement> ) =>
+    {
+        setFormData( { ...formData, password: e.target.value } )
+    }
+
+
+    const onClickLogin = async ( e: { preventDefault: () => void } ) =>
+    {
+        e.preventDefault()
+        SetIsLoading( true )
+        await login( formData )
+        toast.success( "LogIn Successfully" )
+        SetIsLoading( false )
+        setFormData( {
+            email: '',
+            password: ''
+        } )
     }
 
 
@@ -42,7 +81,7 @@ export default function page ()
                         ] }
                         className="mb-4"
                     >
-                        <Input onChange={ () => { } } placeholder="Email or Mobile Number" size="large" />
+                        <Input onChange={ onChangeEmailOrMoble } placeholder="Email or Mobile Number" size="large" />
                     </Form.Item>
 
                     <Form.Item
@@ -52,7 +91,7 @@ export default function page ()
                         ] }
                         className="mb-2"
                     >
-                        <PasswordInput onChange={ () => { } } placeholder="Password" size="large" />
+                        <PasswordInput onChange={ onChangePassword } placeholder="Password" size="large" />
                     </Form.Item>
 
                     <div className="flex justify-between items-center mb-6">
@@ -68,7 +107,7 @@ export default function page ()
                     </div>
 
                     <Form.Item className="mb-4">
-                        <Button type="primary" fullWidth text="Login" size="large" onClick={ () => { } } />
+                        <Button loading={ isLoading } type="primary" fullWidth text="Login" size="large" onClick={ onClickLogin } />
                     </Form.Item>
 
                     <Divider className="my-6">

@@ -70,8 +70,8 @@ export default function page ()
 
     const onClickSignUp = async ( e: { preventDefault: () => void } ) =>
     {
-        SetIsLoading( true )
         e.preventDefault()
+        SetIsLoading( true )
         await signup( fromData )
         toast.success( "Account Created Successfully" )
         SetIsLoading( false )

@@ -5,6 +5,7 @@ import toast from "react-hot-toast"
 
 interface AuthUser {
     signup:(data:any)=>Promise<void>
+    login:(data:any)=>Promise<void>
     authUser:any
 }
 
@@ -31,6 +32,19 @@ export const useAuthStore = create<AuthUser>((set)=>({
         } catch (error) {
             console.log("Error in signup",error)
         }
+    },
+
+    login: async (data:any) => {
+        try {
+
+            const res = await axiosInstance.post("/auth/login",data)
+            set({authUser:res.data})
+
+        } catch (error) {
+            toast.error( "Invalid Credentials" )
+            console.log( "Error while Logining", error )
+        }
+
     }
 
 
